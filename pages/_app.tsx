@@ -1,12 +1,11 @@
 import type { AppProps } from 'next/app'
 import '../styles/globals.css'
-import Layout from '../components/common/Layout'
+import MobileWrapper from '../styles/MobileWrapper'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Layout />
+    <MobileWrapper>
       <Component {...pageProps} />
-    </>
+    </MobileWrapper>
   )
 }
