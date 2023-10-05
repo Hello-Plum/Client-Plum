@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { IoIosArrowBack } from 'react-icons/io'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 interface LayoutProps {
@@ -17,11 +17,11 @@ export default function Layout(props: LayoutProps) {
     <Styled.Root>
       <Styled.Header>
         <Styled.Button>
-          <AiOutlineArrowLeft size={20} />
+          <IoIosArrowBack size={28} />
         </Styled.Button>
         <Styled.Title>{header}</Styled.Title>
         <Styled.Button>
-          <GiHamburgerMenu size={20} />
+          <GiHamburgerMenu size={25} />
         </Styled.Button>
       </Styled.Header>
 
