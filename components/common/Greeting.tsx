@@ -6,10 +6,11 @@ interface GreetingProps {
   children: React.ReactNode
   buttons?: string[]
   link?: string
+  onClickButton?: () => void
 }
 
 export default function Greeting(props: GreetingProps) {
-  const { children, buttons, link } = props
+  const { children, buttons, link, onClickButton } = props
 
   return (
     <Styled.Root>
@@ -25,7 +26,7 @@ export default function Greeting(props: GreetingProps) {
       <Styled.Main>{children}</Styled.Main>
 
       <Styled.Footer>
-        {buttons && <Styled.StrButton>{buttons[0]}</Styled.StrButton>}
+        {buttons && <Styled.StrButton onClick={onClickButton}>{buttons[0]}</Styled.StrButton>}
         {link && <Styled.Link>{link}</Styled.Link>}
       </Styled.Footer>
     </Styled.Root>

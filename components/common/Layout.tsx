@@ -8,15 +8,17 @@ interface LayoutProps {
   buttons?: string[]
   header: string
   link?: string
+  onClickBackButton?: () => void
+  onClickButton?: () => void
 }
 
 export default function Layout(props: LayoutProps) {
-  const { children, buttons, header, link } = props
+  const { children, buttons, header, link, onClickBackButton, onClickButton } = props
 
   return (
     <Styled.Root>
       <Styled.Header>
-        <Styled.Button>
+        <Styled.Button onClick={onClickBackButton}>
           <IoIosArrowBack size={28} />
         </Styled.Button>
         <Styled.Title>{header}</Styled.Title>
@@ -28,7 +30,7 @@ export default function Layout(props: LayoutProps) {
       <Styled.Main>{children}</Styled.Main>
 
       <Styled.Footer>
-        {buttons && <Styled.StrButton>{buttons[0]}</Styled.StrButton>}
+        {buttons && <Styled.StrButton onClick={onClickButton}>{buttons[0]}</Styled.StrButton>}
         {link && <Styled.Link>{link}</Styled.Link>}
       </Styled.Footer>
     </Styled.Root>
@@ -74,8 +76,9 @@ const Styled = {
   Main: styled.main`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     height: 100%;
+    width: 100%;
   `,
   Footer: styled.footer`
     display: flex;
