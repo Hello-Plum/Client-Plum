@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import '../styles/globals.css'
+import './create/components/SetAvailableDates.css'
 import { RecoilRoot } from 'recoil'
 import MobileWrapper from '../styles/MobileWrapper'
 
