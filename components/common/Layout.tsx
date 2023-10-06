@@ -94,7 +94,7 @@ const Styled = {
     justify-content: center;
 
     width: 100%;
-    padding: 1rem;
+    padding: 1.3rem;
     border-radius: 0.6rem;
     background: black;
 
