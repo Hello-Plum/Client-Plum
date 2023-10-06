@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import CreateMeetingTitleComponent from './CreateMeetingTitleComponenet'
 import { createMeetingSteps } from '../../data/create/createMeetingData'
 import { useCreateMeeting } from '../../hooks/create/useCreateMeeting'
+import CreateMeetingBodyComponent from './CreateMeetingBodyComponent'
 
 export default function Create() {
   const router = useRouter()
@@ -21,6 +22,7 @@ export default function Create() {
       }}
     >
       <CreateMeetingTitleComponent step={currentStep}/>
+      <CreateMeetingBodyComponent />
     </Layout>
   )
 }
