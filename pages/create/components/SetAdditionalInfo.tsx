@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import styled from "styled-components"
+import { StepProps } from '../../../types/create/createMeetingInterface'
 
-export default function SetAdditionalInfo() {
+export default function SetAdditionalInfo({ meetingInfo, setMeetingInfo}: StepProps) {
   const [textAreaCount, setTextAreaCount] = useState(0)
-
-  const onTextAreaHandler = (e: any) => {
-    setTextAreaCount(e.target.value.length)
-  }
 
   return (
     <Styled.TextAreaWrapper>
       <Styled.TextArea 
-        onChange={onTextAreaHandler}
+        value={meetingInfo.additionalInfo}
+        onChange={(e) => {
+          setTextAreaCount(e.target.value.length)
+          setMeetingInfo({ additionalInfo: e.target.value })
+        }}
         maxLength={50}
         placeholder='회의 안건, 준비물 등 회의와 관련하여 알리고 싶은 추가내용을 적어 보세요.'
       />

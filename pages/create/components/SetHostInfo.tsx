@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StepProps } from '../../../types/create/createMeetingInterface'
 
-export default function SetHostInfo() {
+export default function SetHostInfo({ meetingInfo, setMeetingInfo}: StepProps) {
   return (
     <Styled.Form>
       <Styled.HostInfoSection>
@@ -10,8 +11,9 @@ export default function SetHostInfo() {
           id='hostname'
           type='text'
           placeholder='방장 이름'
+          value={meetingInfo.name}
           onChange={(e) => {
-            console.log(e.target.value)
+            setMeetingInfo({ name: e.target.value })
           }}
         />
       </Styled.HostInfoSection>
@@ -21,8 +23,9 @@ export default function SetHostInfo() {
           id='hostpassword'
           type='text'
           placeholder='방 비밀번호'
+          value={meetingInfo.password}
           onChange={(e) => {
-            console.log(e.target.value)
+            setMeetingInfo({ password: e.target.value })
           }}
         />
       </Styled.HostInfoSection>

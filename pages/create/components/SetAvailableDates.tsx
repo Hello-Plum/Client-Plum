@@ -2,24 +2,18 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Calendar from 'react-calendar'
 import moment from 'moment'
-import { useCreateMeeting } from '../../../hooks/create/useCreateMeeting'
+import { StepProps } from '../../../types/create/createMeetingInterface'
 
-export default function SetAvailableDates() {
-  const [startDate, setStartDate] = useState('')
-  const [endDate, setEndDate] = useState('')
-
+export default function SetAvailableDates({ meetingInfo, setMeetingInfo }: StepProps) {
   const [mounted, setMounted] = useState<boolean>(false);
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const changeAvailableDates = (e: any) => {
-    /* e type 찾아보기 */
+  const changeAvailableDates = (e: any) => { /* e type 찾아보기 */
     const startDateFormat = moment(e[0]).format('YYYY년 MM월 DD일')
     const endDateFormat = moment(e[1]).format('YYYY년 MM월 DD일')
-
-    setStartDate(startDateFormat)
-    setEndDate(endDateFormat)
+    setMeetingInfo({ availableDates: [startDateFormat, endDateFormat] })
   }
 
   return (
@@ -29,13 +23,13 @@ export default function SetAvailableDates() {
       <Styled.Input 
         type="text"
         placeholder='원하는 기간을 선택해주세요'
-        value={startDate || ''}
+        value={meetingInfo.availableDates[0] || ''}
         disabled
       />
       <Styled.Input 
         type="text"
         placeholder='원하는 기간을 선택해주세요'
-        value={endDate || ''}
+        value={meetingInfo.availableDates[1] || ''}
         disabled
       />
     </Styled.InputWrapper>

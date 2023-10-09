@@ -1,14 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { placeType } from '../../../data/create/createMeetingData'
-import { MeetingInfo } from '../../../types/create/createMeetingInterface'
+import { StepProps } from '../../../types/create/createMeetingInterface'
 
-export default function SetPlace() {
+export default function SetPlace({ meetingInfo, setMeetingInfo }: StepProps) {
+
   return (
     <Styled.PlaceWrapper>
       {placeType.map((type, i) => {
         return (
-          <Styled.Button key={i+type}>
+          <Styled.Button
+            key={i+type}
+            onClick={(e) => { setMeetingInfo({ place: type }) }}
+          >
             {type === 'ONLINE' ? '온라인' : type === 'OFFLINE' ? '오프라인' : '미정'}
           </Styled.Button>
         )

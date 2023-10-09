@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from "styled-components"
+import { StepProps } from '../../../types/create/createMeetingInterface'
 
-export default function SetTitle() {
+export default function SetTitle({ meetingInfo, setMeetingInfo }: StepProps) {
   return (
     <Styled.Input 
       id="title" 
       type="text" 
-      onChange={(e) => { console.log(e.target.value) }}
+      value={meetingInfo.title}
+      onChange={(e) => { setMeetingInfo({ title: e.target.value }) }}
     />
   )
 }

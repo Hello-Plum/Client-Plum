@@ -1,13 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import { durationType } from '../../../data/create/createMeetingData'
+import { StepProps } from '../../../types/create/createMeetingInterface'
 
-export default function SetDuration() {
+export default function SetDuration({ meetingInfo, setMeetingInfo }: StepProps) {
   return (
     <Styled.DurationWrapper>
       {durationType.map((duration, i) => {
-        return <Styled.Button key={i + duration.enum}>{duration.time}</Styled.Button>
-      })}
+        return (
+          <Styled.Button 
+            key={i + duration.enum}
+            onClick={(e) => { setMeetingInfo({ duration: duration.enum }) }}
+          >
+            {duration.time}
+          </Styled.Button>
+        
+        )})}
     </Styled.DurationWrapper>
   )
 }
@@ -20,7 +28,7 @@ const Styled = {
     gap: 1.1rem;
   `,
   Button: styled.button`
-    width: 100%;
+    width: 50%;
     padding: 1.5rem;
     border-radius: 0.6rem;
     background: black;
