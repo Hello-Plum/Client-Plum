@@ -26,8 +26,10 @@ export default function SetAdditionalInfo() {
 const Styled = {
   TextAreaWrapper: styled.div`
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: center;
+    gap: 1.2rem;
   `,  
   TextArea: styled.textarea`
     width: 100%;
