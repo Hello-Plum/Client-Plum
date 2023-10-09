@@ -9,7 +9,6 @@ export default function Create() {
   const { step, meetingInfo, setMeetingInfoForm, handleBackBtnClick, handleBtnClick } = useCreateMeeting()
   const currentStep = createMeetingSteps[step]
   
-
   return (
     <Layout 
       buttons={['다음']} 

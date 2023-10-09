@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import { MeetingInfo } from '../../types/create/createMeetingInterface'
 
 export const useCreateMeeting = () => {
-  // Recoil 상태값 반환 (읽기 전용)
   const [step, setStep] = useRecoilState(createMeetingStepState)
   const [meetingInfo, setMeetingInfo] = useRecoilState(meetingInfoState)
   const router = useRouter()
