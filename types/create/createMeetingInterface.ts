@@ -15,7 +15,6 @@
 - 회의 정보 입력
   → 최대 50자로 회의 안건, 준비물 등 회의와 관련하여 알리고 싶은 내용을 적어주기
  */
-
 export interface MeetingInfo {
   title: string // 회의명
   availableDates: string[] //가능한 기간
@@ -25,4 +24,9 @@ export interface MeetingInfo {
   name: string; // 방장이름
   password: string; // 방 비밀번호
   additionalInfo: string; // 회의에 대한 추가 정보
+}
+
+export interface StepProps{
+  meetingInfo: MeetingInfo
+  setMeetingInfo: (input: Partial<MeetingInfo>) => void
 }

@@ -6,12 +6,32 @@ import SetPlace from './components/SetPlace'
 import SetDuration from './components/SetDuration'
 import SetHostInfo from './components/SetHostInfo'
 import SetAdditionalInfo from './components/SetAdditionalInfo'
+import { MeetingInfo } from '../../types/create/createMeetingInterface'
 
-export default function CreateMeetingBodyComponent() {
+interface CreateMeetingBodyProps {
+  currentStep: string
+  meetingInfo: MeetingInfo
+  setMeetingInfo: (input: Partial<MeetingInfo>) => void
+}
+
+const BodyTypes: { [key: string]: React.JSXElementConstructor<any> } = {
+  'title': SetTitle,
+  'availableDates': SetAvailableDates,
+  'place': SetPlace,
+  'duration': SetDuration,
+  'hostInfo': SetHostInfo,
+  'additionalInfo': SetAdditionalInfo
+}
+
+export default function CreateMeetingBodyComponent({ currentStep, meetingInfo, setMeetingInfo }: CreateMeetingBodyProps) {
+  const CurrentBodyComponent = BodyTypes[currentStep]
+
   return (
     <Styled.BodyWrapper>
-      {/*<SetTitle />*/}
-      <SetAdditionalInfo/>
+      <CurrentBodyComponent
+        meetingInfo={meetingInfo}
+        setMeetingInfo={setMeetingInfo}
+      />
     </Styled.BodyWrapper>
   )
 }
