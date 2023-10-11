@@ -10,10 +10,11 @@ interface LayoutProps {
   link?: string
   onClickBackButton?: () => void
   onClickButton?: () => void
+  onClickButtonLeft?: () => void
 }
 
 export default function Layout(props: LayoutProps) {
-  const { children, buttons, header, link, onClickBackButton, onClickButton } = props
+  const { children, buttons, header, link, onClickBackButton, onClickButton, onClickButtonLeft } = props
 
   return (
     <Styled.Root>
@@ -29,8 +30,13 @@ export default function Layout(props: LayoutProps) {
 
       <Styled.Main>{children}</Styled.Main>
 
-      <Styled.Footer>
-        {buttons && <Styled.StrButton onClick={onClickButton}>{buttons[0]}</Styled.StrButton>}
+      <Styled.Footer isButtons={buttons?.length === 2}>
+        {buttons && buttons?.length == 2 && (
+          <Styled.StrButtonLeft onClick={onClickButtonLeft}>{buttons[1]}</Styled.StrButtonLeft>
+        )}
+        {buttons && buttons?.length >= 1 && (
+          <Styled.StrButton onClick={onClickButton}>{buttons[0]}</Styled.StrButton>
+        )}
         {link && <Styled.Link>{link}</Styled.Link>}
       </Styled.Footer>
     </Styled.Root>
@@ -80,9 +86,9 @@ const Styled = {
     height: 100%;
     width: 100%;
   `,
-  Footer: styled.footer`
+  Footer: styled.footer<{ isButtons: boolean }>`
     display: flex;
-    flex-direction: row;
+    flex-direction: ${({ isButtons }) => (isButtons? 'row' : 'column')};
     justify-content: space-between;
     align-items: center;
     min-width: 32rem;
@@ -100,6 +106,22 @@ const Styled = {
 
     text-align: center;
     color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.052rem;
+    cursor: pointer;
+  `,
+  StrButtonLeft: styled.button`
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    background: black;
+    
+    background: rgba(218, 218, 218, 1);
+    margin-right: 0.9rem;
+    
+    text-align: center;
+    color: black;
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.052rem;
