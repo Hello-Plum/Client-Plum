@@ -1,6 +1,6 @@
-import { useRecoilState, useRecoilValue } from 'recoil'
+import { useRecoilState } from 'recoil'
 import { createMeetingStepState, meetingInfoState } from '../../states/atom'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { MeetingInfo } from '../../types/create/createMeetingInterface'
 
 export const useCreateMeeting = () => {
