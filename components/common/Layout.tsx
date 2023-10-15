@@ -62,7 +62,7 @@ const Styled = {
     align-items: center;
 
     width: 100%;
-    margin-top: 1.4rem;
+    margin-top: 4rem;
   `,
   Title: styled.h1`
     text-align: center;
