@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { AvailableTimeInfo } from '../../../types/enter/checkMeetingInterface'
 import SetName from './components/SetName'
+import SetAvailableTime from './components/SetAvailableTime'
 
 interface CheckAvailableBodyProps {
   currentStep: string
@@ -21,8 +22,12 @@ export default function CheckAvailableBodyComponent({ currentStep, availableTime
 
   return (
     <Styled.BodyWrapper>
-      <CurrentBodyComponent
+      {/*<CurrentBodyComponent
         availableTimeInfo={availableTimeInfo}
+        setAvailableTimeInfo={setAvailableTimeInfo}
+      />*/}
+      <SetAvailableTime 
+        availableTimeInfo={availableTimeInfo} 
         setAvailableTimeInfo={setAvailableTimeInfo}
       />
     </Styled.BodyWrapper>
@@ -33,6 +38,9 @@ const Styled = {
   BodyWrapper: styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%
+    width: 100%;
+    height: 100%;
+    backgroud-color: green;
+  
   `,
 }

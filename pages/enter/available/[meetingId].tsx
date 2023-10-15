@@ -14,14 +14,13 @@ export default function Available() {
       buttons={['다음']}
       header='가능한 시간 입력'
       onClickBackButton={handleBackBtnClick}
-      onClickButton={handleBtnClick}
-    >
+      onClickButton={handleBtnClick}>
       <CheckAvailableTitleComponent step={currentStep} />
-      <CheckAvailableBodyComponent 
+      {/*<CheckAvailableBodyComponent 
         currentStep={currentStep}
         availableTimeInfo={availableTimeInfo}
         setAvailableTimeInfo={setAvailableTimeInfoForm}
-      />
+  />*/}
       </Layout>
   )
 }
