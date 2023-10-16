@@ -16,11 +16,11 @@ export default function Available() {
       onClickBackButton={handleBackBtnClick}
       onClickButton={handleBtnClick}>
       <CheckAvailableTitleComponent step={currentStep} />
-      {/*<CheckAvailableBodyComponent 
+      <CheckAvailableBodyComponent 
         currentStep={currentStep}
         availableTimeInfo={availableTimeInfo}
         setAvailableTimeInfo={setAvailableTimeInfoForm}
-  />*/}
+      />
       </Layout>
   )
 }

@@ -10,11 +10,10 @@ html, body, #root {
 
 .app {
   position: relative;
-  min-height: 100%;
-  padding: 10px 20px;
+  /*min-height: 100%;*/
+  padding: 10px 10px;
   text-align: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -29,8 +28,8 @@ body {
 
 .slot {
   display: inline-block;
-  width: 45px;
-  height: 10px;
+  width: 4.5rem;
+  height: 1.4rem;
   background: #eee;
   --color: #4af;
   box-sizing: border-box;
