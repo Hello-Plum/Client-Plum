@@ -37,8 +37,12 @@ export default function SetAvailableTime({ availableTimeInfo, setAvailableTimeIn
                 continueSelect={true}
                 ratio={0}
                 onSelect={(e) => {
+                  // 선택한 div 확인용 코드
+                  console.log('e.selected', e.selected)
                   e.added.forEach((el) => {
-                    el.classList.add('selected')
+                    if(Number(el.id) % 7 !== 0) {
+                      el.classList.add('selected')
+                    }
                   })
                   e.removed.forEach((el) => {
                     el.classList.remove('selected')
@@ -49,13 +53,24 @@ export default function SetAvailableTime({ availableTimeInfo, setAvailableTimeIn
               <div className="select-container">
                 <div className="elements selecto-area" id="selecto1">
                   {slots.map((i) => {
+                    /**
+                     * 30분 단위 점선
+                     */
                     let sep = ''
                     if (Math.floor((i / 7) % 2) === 0) {
                       sep = ' dotted'
                     } else if (Math.floor((i / 7) % 2) === 1) {
                       sep = ' solid'
                     }
-                    return <div className={'slot' + sep} key={i}></div>
+
+                    /**
+                     * 요일별 비활성화
+                     */
+                    if (i % 7 === 0) { // Monday
+                      sep = ' disabled'
+                    }
+
+                    return <div id={String(i)} className={'slot' + sep} key={i}></div>
                   })}
                 </div>
               </div>

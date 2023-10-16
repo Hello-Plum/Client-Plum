@@ -20,6 +20,10 @@ html, body, #root {
   line-height: 0px;
 }
 
+.disabled {
+  pointer-events: none;
+  background-color: #eee;
+}
 
 body {
   background: #fff;
@@ -30,7 +34,7 @@ body {
   display: inline-block;
   width: 4.5rem;
   height: 1.4rem;
-  background: #eee;
+  /*background: #eee;*/
   --color: #4af;
   box-sizing: border-box;
   border-right: 0.5px solid black;
