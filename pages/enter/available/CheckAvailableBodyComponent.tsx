@@ -37,10 +37,7 @@ export default function CheckAvailableBodyComponent({ currentStep, availableTime
 const Styled = {
   BodyWrapper: styled.div`
     display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
-    backgroud-color: green;
-  
   `,
 }

@@ -51,7 +51,7 @@ const Styled = {
     align-items: center;
 
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     overflow-y: scroll;
     overflow-x: hidden;
@@ -60,7 +60,7 @@ const Styled = {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem 4rem 0px;
+    margin: 2rem 5.4rem 0px 4.6rem;
     width: 100%;
   `,
   Title: styled.h1`
@@ -92,6 +92,9 @@ const Styled = {
     align-items: center;
     min-width: 32rem;
     margin-bottom: 1.2rem;
+
+    position: fixed;
+    bottom: 0;
   `,
   StrButton: styled.button`
     display: flex;

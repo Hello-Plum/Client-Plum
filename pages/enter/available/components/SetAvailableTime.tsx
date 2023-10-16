@@ -13,7 +13,7 @@ export default function SetAvailableTime({ availableTimeInfo, setAvailableTimeIn
   }
 
   return (
-    <>
+    <Styled.Root>
       <Styled.WeekContainer>
         {week.map((day) => {
           return <Styled.Day>{day}</Styled.Day>
@@ -64,17 +64,23 @@ export default function SetAvailableTime({ availableTimeInfo, setAvailableTimeIn
           </div>
         </Styled.TimeSelect>
       </Styled.TimeTable>
-    </>
+    </Styled.Root>
   )
 }
 
 const Styled = {
+  Root: styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0px 5.2rem 1rem;
+  `,
   WeekContainer: styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin: 0px 1.2rem;
+    margin: 0px 4.5rem;
+    gap: 3.5rem;
   `,
   Day: styled.div`
     text-align: center;
