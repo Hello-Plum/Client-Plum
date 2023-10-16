@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.23.0"],\
             ["@babel/preset-typescript", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:7.23.0"],\
             ["@babel/runtime", "npm:7.23.1"],\
+            ["@daybrush/utils", "npm:1.13.0"],\
             ["@types/node", "npm:20.8.2"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.8"],\
@@ -40,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:13.5.4"],\
             ["eslint-config-prettier", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:9.0.0"],\
             ["eslint-plugin-prettier", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.0.0"],\
+            ["framework-utils", "npm:1.1.0"],\
             ["moment", "npm:2.29.4"],\
             ["next", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:13.5.4"],\
             ["prettier", "npm:3.0.3"],\
@@ -7027,6 +7029,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.23.0"],\
             ["@babel/preset-typescript", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:7.23.0"],\
             ["@babel/runtime", "npm:7.23.1"],\
+            ["@daybrush/utils", "npm:1.13.0"],\
             ["@types/node", "npm:20.8.2"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.8"],\
@@ -7036,6 +7039,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:13.5.4"],\
             ["eslint-config-prettier", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:9.0.0"],\
             ["eslint-plugin-prettier", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.0.0"],\
+            ["framework-utils", "npm:1.1.0"],\
             ["moment", "npm:2.29.4"],\
             ["next", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:13.5.4"],\
             ["prettier", "npm:3.0.3"],\
