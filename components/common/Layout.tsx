@@ -60,9 +60,8 @@ const Styled = {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    margin: 2rem 4rem 0px;
     width: 100%;
-    margin-top: 4rem;
   `,
   Title: styled.h1`
     text-align: center;
