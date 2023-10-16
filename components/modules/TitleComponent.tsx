@@ -21,7 +21,7 @@ const Styled = {
   TitleWrapper: styled.div`
     display: flex;
     flex-direction: column;
-    padding: 4.4rem 0px 3rem;
+    padding: 4.4rem 2rem 3rem;
     gap: 1.2rem;
     
   `,
