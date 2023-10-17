@@ -1,6 +1,6 @@
 export const checkAvailableTimeSteps = [
   'name',
-  'availableDates',
+  'availableTimeTable',
   'priority',
   'end'
 ]

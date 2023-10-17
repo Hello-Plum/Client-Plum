@@ -4,7 +4,7 @@ export interface MeetingProps {
 
 export interface AvailableTimeInfo {
   name: string // 참여자 이름
-  availableDates: string[] //가능한 기간
+  availableTimeList: string[] //가능한 기간
   priorities: string[] //우선순위
 
 }

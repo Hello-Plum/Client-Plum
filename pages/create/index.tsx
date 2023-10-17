@@ -18,7 +18,7 @@ export default function Create() {
     >
       <CreateMeetingTitleComponent step={currentStep}/>
       <CreateMeetingBodyComponent 
-        currentStep={currentStep}
+        step={currentStep}
         meetingInfo={meetingInfo}
         setMeetingInfo={setMeetingInfoForm}
       />

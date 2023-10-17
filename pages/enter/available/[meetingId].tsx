@@ -17,7 +17,7 @@ export default function Available() {
       onClickButton={handleBtnClick}>
       <CheckAvailableTitleComponent step={currentStep} />
       <CheckAvailableBodyComponent 
-        currentStep={currentStep}
+        step={currentStep}
         availableTimeInfo={availableTimeInfo}
         setAvailableTimeInfo={setAvailableTimeInfoForm}
       />

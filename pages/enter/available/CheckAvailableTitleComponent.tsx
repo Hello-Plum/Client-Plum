@@ -12,7 +12,7 @@ const checkAvailableTimeSteps : CheckAvailableTimeSteps = {
     title: '참여자의 이름을 알려주세요',
     subTitle: '정확한 일정 조율을 위해 실명입력을 추천드려요'
   },
-  availableDates: {
+  availableTimeTable: {
     title: '가능한 시간을 알려주세요',
     subTitle: '아래 시간표에 가능한 시간을 선택해주세요'
   },

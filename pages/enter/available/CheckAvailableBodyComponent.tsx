@@ -2,32 +2,28 @@ import React from 'react'
 import styled from 'styled-components'
 import { AvailableTimeInfo } from '../../../types/enter/checkMeetingInterface'
 import SetName from './components/SetName'
-import SetAvailableTime from './components/SetAvailableTime'
+import SetAvailableTimeTable from './components/SetAvailableTimeTable'
 
 interface CheckAvailableBodyProps {
-  currentStep: string
+  step: string
   availableTimeInfo: AvailableTimeInfo
   setAvailableTimeInfo: (input: Partial<AvailableTimeInfo>) => void
 }
 
 const BodyTypes: { [key: string]: React.JSXElementConstructor<any> } = {
-  'name': SetName
-  //'availableDates'
+  'name': SetName,
+  'availableTimeTable': SetAvailableTimeTable,
   //'priority',
   //'end'
 }
 
-export default function CheckAvailableBodyComponent({ currentStep, availableTimeInfo, setAvailableTimeInfo }: CheckAvailableBodyProps) {
-  const CurrentBodyComponent = BodyTypes[currentStep]
+export default function CheckAvailableBodyComponent({ step, availableTimeInfo, setAvailableTimeInfo }: CheckAvailableBodyProps) {
+  const CurrentBodyComponent = BodyTypes[step]
 
   return (
     <Styled.BodyWrapper>
-      {/*<CurrentBodyComponent
+      <CurrentBodyComponent
         availableTimeInfo={availableTimeInfo}
-        setAvailableTimeInfo={setAvailableTimeInfo}
-      />*/}
-      <SetAvailableTime 
-        availableTimeInfo={availableTimeInfo} 
         setAvailableTimeInfo={setAvailableTimeInfo}
       />
     </Styled.BodyWrapper>

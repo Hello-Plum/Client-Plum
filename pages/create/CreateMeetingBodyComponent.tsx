@@ -9,7 +9,7 @@ import SetAdditionalInfo from './components/SetAdditionalInfo'
 import { MeetingInfo } from '../../types/create/createMeetingInterface'
 
 interface CreateMeetingBodyProps {
-  currentStep: string
+  step: string
   meetingInfo: MeetingInfo
   setMeetingInfo: (input: Partial<MeetingInfo>) => void
 }
@@ -23,8 +23,8 @@ const BodyTypes: { [key: string]: React.JSXElementConstructor<any> } = {
   'additionalInfo': SetAdditionalInfo
 }
 
-export default function CreateMeetingBodyComponent({ currentStep, meetingInfo, setMeetingInfo }: CreateMeetingBodyProps) {
-  const CurrentBodyComponent = BodyTypes[currentStep]
+export default function CreateMeetingBodyComponent({ step, meetingInfo, setMeetingInfo }: CreateMeetingBodyProps) {
+  const CurrentBodyComponent = BodyTypes[step]
 
   return (
     <Styled.BodyWrapper>
