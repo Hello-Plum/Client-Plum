@@ -32,6 +32,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-typescript", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:7.23.0"],\
             ["@babel/runtime", "npm:7.23.1"],\
             ["@daybrush/utils", "npm:1.13.0"],\
+            ["@tanstack/react-query", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.0.5"],\
+            ["@tanstack/react-query-devtools", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.1.0"],\
             ["@types/node", "npm:20.8.2"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.8"],\
@@ -3132,6 +3134,86 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@swc/helpers", "npm:0.5.2"],\
             ["tslib", "npm:2.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tanstack/query-core", [\
+        ["npm:5.0.5", {\
+          "packageLocation": "./.yarn/cache/@tanstack-query-core-npm-5.0.5-9cc79c2f9c-8df99b29c1.zip/node_modules/@tanstack/query-core/",\
+          "packageDependencies": [\
+            ["@tanstack/query-core", "npm:5.0.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tanstack/query-devtools", [\
+        ["npm:5.1.0", {\
+          "packageLocation": "./.yarn/cache/@tanstack-query-devtools-npm-5.1.0-952682960b-eebdbe4410.zip/node_modules/@tanstack/query-devtools/",\
+          "packageDependencies": [\
+            ["@tanstack/query-devtools", "npm:5.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tanstack/react-query", [\
+        ["npm:5.0.5", {\
+          "packageLocation": "./.yarn/cache/@tanstack-react-query-npm-5.0.5-e97446a69e-8c4db91b2d.zip/node_modules/@tanstack/react-query/",\
+          "packageDependencies": [\
+            ["@tanstack/react-query", "npm:5.0.5"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.0.5", {\
+          "packageLocation": "./.yarn/__virtual__/@tanstack-react-query-virtual-51a5686cba/0/cache/@tanstack-react-query-npm-5.0.5-e97446a69e-8c4db91b2d.zip/node_modules/@tanstack/react-query/",\
+          "packageDependencies": [\
+            ["@tanstack/react-query", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.0.5"],\
+            ["@tanstack/query-core", "npm:5.0.5"],\
+            ["@types/react", "npm:18.2.24"],\
+            ["@types/react-dom", "npm:18.2.8"],\
+            ["@types/react-native", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:18.2.0"],\
+            ["react-native", null]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react-native",\
+            "@types/react",\
+            "react-dom",\
+            "react-native",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tanstack/react-query-devtools", [\
+        ["npm:5.1.0", {\
+          "packageLocation": "./.yarn/cache/@tanstack-react-query-devtools-npm-5.1.0-667255c29f-b8d0955260.zip/node_modules/@tanstack/react-query-devtools/",\
+          "packageDependencies": [\
+            ["@tanstack/react-query-devtools", "npm:5.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@tanstack-react-query-devtools-virtual-216c4ab29a/0/cache/@tanstack-react-query-devtools-npm-5.1.0-667255c29f-b8d0955260.zip/node_modules/@tanstack/react-query-devtools/",\
+          "packageDependencies": [\
+            ["@tanstack/react-query-devtools", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.1.0"],\
+            ["@tanstack/query-devtools", "npm:5.1.0"],\
+            ["@tanstack/react-query", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.0.5"],\
+            ["@types/react", "npm:18.2.24"],\
+            ["@types/react-dom", "npm:18.2.8"],\
+            ["@types/tanstack__react-query", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@tanstack/react-query",\
+            "@types/react-dom",\
+            "@types/react",\
+            "@types/tanstack__react-query",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7124,6 +7206,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-typescript", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:7.23.0"],\
             ["@babel/runtime", "npm:7.23.1"],\
             ["@daybrush/utils", "npm:1.13.0"],\
+            ["@tanstack/react-query", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.0.5"],\
+            ["@tanstack/react-query-devtools", "virtual:7ad9dbb7833d8b5dbe570febcd8e102c796495a5f7357d49f8d8b827e82708c826622e1d42f323c85985794b0f5b2eed3424ae5b9838be5a35a285318f1c70ca#npm:5.1.0"],\
             ["@types/node", "npm:20.8.2"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.8"],\
