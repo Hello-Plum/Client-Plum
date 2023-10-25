@@ -22,14 +22,11 @@ export const useCheckAvailableTimeTable = () => {
       if(Number(el.id) % 7 === selectDay) {
         el.classList.add('selected')
       }
-      //el.classList.add('selected')
     })
     e.removed.forEach((el: any) => {
       el.classList.remove('selected')
     })
   }
-
-
 
   return { selectDay, isPeriod, handleTimeTableSelect, disabledWeekTable }
 }
