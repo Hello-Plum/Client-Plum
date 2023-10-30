@@ -11,9 +11,9 @@ export default function SetHostInfo({ meetingInfo, setMeetingInfo}: StepProps) {
           id='hostname'
           type='text'
           placeholder='방장 이름'
-          value={meetingInfo.name}
+          value={meetingInfo.host}
           onChange={(e) => {
-            setMeetingInfo({ name: e.target.value })
+            setMeetingInfo({ host: e.target.value })
           }}
         />
       </Styled.HostInfoSection>

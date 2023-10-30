@@ -5,7 +5,7 @@ import { AvailableTimeInfo } from '../types/enter/checkMeetingInterface'
 // 회의 생성하기
 export const createMeetingStepState = atom<number>({
   key: 'createMeetingStepState',
-  default: 0
+  default: 0,
 })
 
 export const currentStepState = atom<string>({
@@ -16,14 +16,14 @@ export const currentStepState = atom<string>({
 export const meetingInfoState = atom<MeetingInfo>({
   key: 'meetingInfoState',
   default: {
-    title: '',
-    availableDates: [],
-    place: '',
-    placeDetail: '',
-    duration: '',
     name: '',
+    startDate: '',
+    endDate: '',
+    place: '',
+    placeDetail: 'online', // 박아둠
+    host: '',
     password: '',
-    additionalInfo: '' 
+    info: '' 
   }
 })
 

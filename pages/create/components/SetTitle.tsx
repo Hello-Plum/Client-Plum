@@ -7,8 +7,8 @@ export default function SetTitle({ meetingInfo, setMeetingInfo }: StepProps) {
     <Styled.Input 
       id="title" 
       type="text" 
-      value={meetingInfo.title}
-      onChange={(e) => { setMeetingInfo({ title: e.target.value }) }}
+      value={meetingInfo.name}
+      onChange={(e) => { setMeetingInfo({ name: e.target.value }) }}
     />
   )
 }

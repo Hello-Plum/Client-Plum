@@ -8,10 +8,10 @@ export default function SetAdditionalInfo({ meetingInfo, setMeetingInfo}: StepPr
   return (
     <Styled.TextAreaWrapper>
       <Styled.TextArea 
-        value={meetingInfo.additionalInfo}
+        value={meetingInfo.info}
         onChange={(e) => {
           setTextAreaCount(e.target.value.length)
-          setMeetingInfo({ additionalInfo: e.target.value })
+          setMeetingInfo({ info: e.target.value })
         }}
         maxLength={50}
         placeholder='회의 안건, 준비물 등 회의와 관련하여 알리고 싶은 추가내용을 적어 보세요.'

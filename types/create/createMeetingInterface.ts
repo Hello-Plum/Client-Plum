@@ -16,14 +16,14 @@
   → 최대 50자로 회의 안건, 준비물 등 회의와 관련하여 알리고 싶은 내용을 적어주기
  */
 export interface MeetingInfo {
-  title: string // 회의명
-  availableDates: string[] //가능한 기간
-  place: string //회의 장소
-  placeDetail: string // 회의 장소 디테일 [온라인, 오프라인, 미정]
-  duration: string // 회의 진행시간
-  name: string; // 방장이름
-  password: string; // 방 비밀번호
-  additionalInfo: string; // 회의에 대한 추가 정보
+  name: string
+  startDate: string
+  endDate: string
+  place: string
+  placeDetail: string
+  host: string
+  password: string
+  info: string
 }
 
 export interface StepProps{

@@ -11,9 +11,9 @@ export default function SetAvailableDates({ meetingInfo, setMeetingInfo }: StepP
   }, []);
 
   const changeAvailableDates = (e: any) => { /* e type 찾아보기 */
-    const startDateFormat = moment(e[0]).format('YYYY년 MM월 DD일')
-    const endDateFormat = moment(e[1]).format('YYYY년 MM월 DD일')
-    setMeetingInfo({ availableDates: [startDateFormat, endDateFormat] })
+    const startDateFormat = moment(e[0]).format('YYYY-MM-DD')
+    const endDateFormat = moment(e[1]).format('YYYY-MM-DD')
+    setMeetingInfo({ startDate: startDateFormat, endDate: endDateFormat })
   }
 
   return (
@@ -23,13 +23,13 @@ export default function SetAvailableDates({ meetingInfo, setMeetingInfo }: StepP
       <Styled.Input 
         type="text"
         placeholder='원하는 기간을 선택해주세요'
-        value={meetingInfo.availableDates[0] || ''}
+        value={meetingInfo.startDate || ''}
         disabled
       />
       <Styled.Input 
         type="text"
         placeholder='원하는 기간을 선택해주세요'
-        value={meetingInfo.availableDates[1] || ''}
+        value={meetingInfo.endDate || ''}
         disabled
       />
     </Styled.InputWrapper>
