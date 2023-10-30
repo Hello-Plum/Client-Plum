@@ -13,7 +13,7 @@ export const createMeetingSteps = [
   'title',
   'availableDates',
   'place',
-  'duration',
+  //'duration',
   'hostInfo',
   'additionalInfo'
 ]

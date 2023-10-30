@@ -18,7 +18,7 @@ const BodyTypes: { [key: string]: React.JSXElementConstructor<any> } = {
   'title': SetTitle,
   'availableDates': SetAvailableDates,
   'place': SetPlace,
-  'duration': SetDuration,
+  //'duration': SetDuration,
   'hostInfo': SetHostInfo,
   'additionalInfo': SetAdditionalInfo
 }
