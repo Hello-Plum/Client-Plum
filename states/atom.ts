@@ -8,9 +8,9 @@ export const createMeetingStepState = atom<number>({
   default: 0,
 })
 
-export const currentStepState = atom<string>({
-  key: 'currentStepState',
-  default: ''
+export const currentActivatedState = atom<boolean>({
+  key: 'currentActivatedState',
+  default: false,
 })
 
 export const meetingInfoState = atom<MeetingInfo>({

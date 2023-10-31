@@ -6,6 +6,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 interface LayoutProps {
   children: React.ReactNode
   buttons?: string[]
+  isButtonActivated: boolean
   header: string
   link?: string
   onClickBackButton?: () => void
@@ -14,7 +15,7 @@ interface LayoutProps {
 }
 
 export default function Layout(props: LayoutProps) {
-  const { children, buttons, header, link, onClickBackButton, onClickButton, onClickButtonLeft } = props
+  const { children, buttons, isButtonActivated, header, link, onClickBackButton, onClickButton, onClickButtonLeft } = props
 
   return (
     <Styled.Root>
@@ -32,10 +33,14 @@ export default function Layout(props: LayoutProps) {
 
       <Styled.Footer isButtons={buttons?.length === 2}>
         {buttons && buttons?.length == 2 && (
-          <Styled.StrButtonLeft onClick={onClickButtonLeft}>{buttons[1]}</Styled.StrButtonLeft>
+          <Styled.StrButtonLeft onClick={onClickButtonLeft}>
+            {buttons[1]}
+          </Styled.StrButtonLeft>
         )}
         {buttons && buttons?.length >= 1 && (
-          <Styled.StrButton onClick={onClickButton}>{buttons[0]}</Styled.StrButton>
+          <Styled.StrButton isActivated={isButtonActivated} onClick={onClickButton}>
+            {buttons[0]}
+          </Styled.StrButton>
         )}
         {link && <Styled.Link>{link}</Styled.Link>}
       </Styled.Footer>
@@ -96,7 +101,7 @@ const Styled = {
     position: fixed;
     bottom: 0;
   `,
-  StrButton: styled.button`
+  StrButton: styled.button<{ isActivated: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,14 +109,15 @@ const Styled = {
     width: 100%;
     padding: 1.3rem;
     border-radius: 0.6rem;
-    background: black;
+    background: ${({ isActivated }) => (isActivated? 'black' : 'gray')};
 
     text-align: center;
-    color: white;
+    color: ${({ isActivated }) => (isActivated? 'white' : 'black')};
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.052rem;
     cursor: pointer;
+    pointer-events: ${({ isActivated }) => (isActivated? 'auto' : 'none')};
   `,
   StrButtonLeft: styled.button`
     width: 100%;

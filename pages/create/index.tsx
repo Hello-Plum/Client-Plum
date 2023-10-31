@@ -6,12 +6,13 @@ import { useCreateMeeting } from '../../hooks/create/useCreateMeeting'
 import CreateMeetingBodyComponent from './CreateMeetingBodyComponent'
 
 export default function Create() {
-  const { step, meetingInfo, setMeetingInfoForm, handleBackBtnClick, handleBtnClick } = useCreateMeeting()
+  const { step, isActivated, meetingInfo, setMeetingInfoForm, handleBackBtnClick, handleBtnClick } = useCreateMeeting()
   const currentStep = createMeetingSteps[step]
   
   return (
     <Layout 
       buttons={['다음']} 
+      isButtonActivated={isActivated}
       header='회의 정보 입력'
       onClickBackButton={handleBackBtnClick}
       onClickButton={handleBtnClick}
