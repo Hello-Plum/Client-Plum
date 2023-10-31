@@ -1,32 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StepProps } from '../../../types/create/createMeetingInterface'
+import InputComponent from '../../../components/atom/InputComponenet'
 
 export default function SetHostInfo({ meetingInfo, setMeetingInfo}: StepProps) {
   return (
     <Styled.Form>
       <Styled.HostInfoSection>
         <Styled.Label>방장 이름</Styled.Label>
-        <Styled.Input
-          id='hostname'
-          type='text'
-          placeholder='방장 이름'
-          value={meetingInfo.host}
-          onChange={(e) => {
+        <InputComponent 
+          id={'hostname'} 
+          type={'text'} 
+          placeholder={'방장 이름'} 
+          value={meetingInfo.host} 
+          onChangeInput={(e) => {
             setMeetingInfo({ host: e.target.value })
-          }}
+          }} 
         />
       </Styled.HostInfoSection>
       <Styled.HostInfoSection>
         <Styled.Label>방 비밀번호</Styled.Label>
-        <Styled.Input
-          id='hostpassword'
-          type='text'
-          placeholder='방 비밀번호'
-          value={meetingInfo.password}
-          onChange={(e) => {
+        <InputComponent 
+          id={'hostpassword'} 
+          type={'password'} 
+          placeholder={'방 비밀번호'} 
+          value={meetingInfo.password} 
+          onChangeInput={(e) => {
             setMeetingInfo({ password: e.target.value })
-          }}
+          }} 
         />
       </Styled.HostInfoSection>
     </Styled.Form>
