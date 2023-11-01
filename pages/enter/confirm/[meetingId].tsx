@@ -8,7 +8,10 @@ export default function Confirm() {
   //console.log('param', param.meetingId)
   
   return (
-    <Layout buttons={['확정']} header='회의 일정 확정'>
+    <Layout
+      buttons={['확정']} 
+      isButtonActivated={true}
+      header='회의 일정 확정'>
     </Layout>
   )
 }

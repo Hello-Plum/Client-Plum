@@ -12,6 +12,7 @@ export default function Available() {
   return (
     <Layout 
       buttons={['다음']}
+      isButtonActivated={true}
       header='가능한 시간 입력'
       onClickBackButton={handleBackBtnClick}
       onClickButton={handleBtnClick}>
