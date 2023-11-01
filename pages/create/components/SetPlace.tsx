@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { placeType } from '../../../data/create/createMeetingData'
 import { StepProps } from '../../../types/create/createMeetingInterface'
+import StringButtonComponent from '../../../components/atom/StringButtonComponent'
 
 export default function SetPlace({ meetingInfo, setMeetingInfo }: StepProps) {
 
@@ -9,12 +10,14 @@ export default function SetPlace({ meetingInfo, setMeetingInfo }: StepProps) {
     <Styled.PlaceWrapper>
       {placeType.map((type, i) => {
         return (
-          <Styled.Button
+          <StringButtonComponent 
             key={i+type}
-            onClick={(e) => { setMeetingInfo({ place: type }) }}
-          >
-            {type === 'ONLINE' ? '온라인' : type === 'OFFLINE' ? '오프라인' : '미정'}
-          </Styled.Button>
+            isActivated={(meetingInfo.place === type ? true : false)}
+            buttonName={type === 'ONLINE' ? '온라인' : type === 'OFFLINE' ? '오프라인' : '미정'}
+            handleClick={(e) => {
+              setMeetingInfo({ place: type })
+            }}
+          />
         )
       })}
 
@@ -30,11 +33,11 @@ const Styled = {
     justify-content: center;
     gap: 1rem;
   `,
-  Button: styled.button`
+  Button: styled.button<{ isClicked: boolean }>`
     width: 100%;
     padding: 1.5rem;
     border-radius: 0.6rem;
-    background: black;
+    background: ${({ isClicked }) => (isClicked? 'black': 'gray')};
 
     text-align: center;
     color: white;
