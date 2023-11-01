@@ -11,10 +11,12 @@ export const useCreateMeeting = () => {
   const router = useRouter()
 
   const setMeetingInfoForm = (input: Partial<MeetingInfo>) => {
+    console.log('input', input)
     setMeetingInfo({ ...meetingInfo, ...input })
     if (input.name && input.name.length < 16) setIsActivated(true)
     else if (input.startDate && input.endDate) setIsActivated(true)
-    else if (input.place && input.placeDetail) setIsActivated(true)
+    else if (input.place) setIsActivated(true)
+    else if (input.placeDetail || !input.placeDetail) setIsActivated(true)
     else if (input.host && input.password) setIsActivated(true)
     else if (input.info) setIsActivated(true)
     else setIsActivated(false)

@@ -20,7 +20,7 @@ export const meetingInfoState = atom<MeetingInfo>({
     startDate: '',
     endDate: '',
     place: '',
-    placeDetail: 'online', // 박아둠
+    placeDetail: '', 
     host: '',
     password: '',
     info: '' 

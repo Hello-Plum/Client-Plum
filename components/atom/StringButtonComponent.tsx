@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface StringButtonProps {
-  key: string
+  key?: string | null
   isActivated: boolean
   buttonName: string
   handleClick?: (e: any) => void
