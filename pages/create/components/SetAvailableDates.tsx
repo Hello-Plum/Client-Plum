@@ -10,10 +10,15 @@ export default function SetAvailableDates({ meetingInfo, setMeetingInfo }: StepP
     setMounted(true);
   }, []);
 
-  const changeAvailableDates = (e: any) => { /* e type 찾아보기 */
+  const handleAvailableDates = (e: any) => { /* e type 찾아보기 */
     const startDateFormat = moment(e[0]).format('YYYY-MM-DD')
     const endDateFormat = moment(e[1]).format('YYYY-MM-DD')
-    setMeetingInfo({ startDate: startDateFormat, endDate: endDateFormat })
+    if (e[1].getDate() - e[0].getDate() > 6) {
+      setMeetingInfo({ startDate: '', endDate: '' })
+      alert('회의 날짜는 최대 7일까지 정할 수 있어요!')
+    } else {
+      setMeetingInfo({ startDate: startDateFormat, endDate: endDateFormat })
+    }
   }
 
   return (
@@ -34,7 +39,7 @@ export default function SetAvailableDates({ meetingInfo, setMeetingInfo }: StepP
       />
     </Styled.InputWrapper>
       <Calendar
-        onChange={changeAvailableDates}
+        onChange={handleAvailableDates}
         selectRange={true}
         formatDay={(local, date) => moment(date).format('DD')}
       />
