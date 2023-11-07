@@ -66,7 +66,7 @@ export const useCreateMeeting = () => {
     try {
       const { data } = await postCreateMeeting(meetingInfo)
       console.log('id', data?.id)
-      router.push('/meetingInfo')
+      router.push(`/meetingDetail/${data?.id}`)
       
     } catch (error) {
       console.log('[ERROR] createMeeting error', error)
