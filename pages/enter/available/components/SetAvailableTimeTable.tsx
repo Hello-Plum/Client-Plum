@@ -80,8 +80,7 @@ const Styled = {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin: 0px 4.5rem;
-    gap: 3.5rem;
+    margin: 0px 0.5rem 0px 3.2rem;
   `,
   Day: styled.div`
     text-align: center;
@@ -96,9 +95,8 @@ const Styled = {
   TimeContainer: styled.div`
     display: flex;
     flex-direction: column;
-    margin: 1rem 0px 1rem;
-    gap: 1.745rem;
-
+    align-items: flex-end;
+    justify-content: space-around;
   `,
   Time: styled.div`
     text-align: center;
