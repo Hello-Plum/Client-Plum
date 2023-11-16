@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { AvailableTimeInfo } from '../../../types/enter/checkMeetingInterface'
 import SetName from './components/SetName'
 import SetAvailableTimeTable from './components/SetAvailableTimeTable'
+import SetPriorityTimeTable from './components/SetPriorityTimeTable'
 
 interface CheckAvailableBodyProps {
   step: string
@@ -13,7 +14,7 @@ interface CheckAvailableBodyProps {
 const BodyTypes: { [key: string]: React.JSXElementConstructor<any> } = {
   'name': SetName,
   'availableTimeTable': SetAvailableTimeTable,
-  //'priority',
+  'priority': SetPriorityTimeTable,
   //'end'
 }
 
