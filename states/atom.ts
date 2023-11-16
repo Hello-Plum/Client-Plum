@@ -51,3 +51,13 @@ export const isHostSelectedPeriodState = atom<boolean>({
   key: 'isHostSelectedPeriodState',
   default: false
 })
+
+export const memberSelectedTimeBlockList = atom<Array<number>>({
+  key: 'memberSelectedTimeBlockList',
+  default: [],
+})
+
+export const groupSelectedTimeBlockList = atom<number[][]>({
+  key: 'groupSelectedTimeBlockList',
+  default: [[0]],
+})

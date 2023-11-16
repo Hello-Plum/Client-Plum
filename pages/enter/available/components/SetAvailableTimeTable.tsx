@@ -3,7 +3,7 @@ import { StepProps } from '../../../../types/enter/checkMeetingInterface'
 import Selecto from 'react-selecto'
 import { styled } from 'styled-components'
 import { timeList, weekList } from '../../../../data/available/checkAvailableTimeTableData'
-import { useCheckAvailableTimeTable } from '../../../../hooks/available/useCheckAvailableTimeTable'
+import { useCheckAvailableTimeTable } from '../../../../hooks/member/useCheckAvailableTimeTable'
 
 export default function SetAvailableTime({ availableTimeInfo, setAvailableTimeInfo }: StepProps) {
   const { selectDay, isPeriod, handleTimeTableSelect, disabledWeekTable } = useCheckAvailableTimeTable()

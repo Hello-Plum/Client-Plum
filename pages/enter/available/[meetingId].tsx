@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../../components/common/Layout'
 import CheckAvailableTitleComponent from './CheckAvailableTitleComponent'
 import { checkAvailableTimeSteps } from '../../../data/available/checkAvailableTimeData'
-import { useCheckAvailableTime } from '../../../hooks/available/useCheckAvailableTime'
+import { useCheckAvailableTime } from '../../../hooks/member/useCheckAvailableTime'
 import CheckAvailableBodyComponent from './CheckAvailableBodyComponent'
 
 export default function Available() {
