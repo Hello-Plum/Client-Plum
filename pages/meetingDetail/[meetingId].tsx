@@ -9,7 +9,7 @@ export default function MeetingDetail() {
   const router = useRouter()
   const { meetingId } = router.query
   const { isLoading, detail } = useMeetingDetail(meetingId)
-  
+
   if (!isLoading) {
     return (
       // button 누르면 링크 복사
@@ -17,17 +17,24 @@ export default function MeetingDetail() {
         <Styled.MeetingInfoWrapper>
           <Styled.Title>링크를 통해 초대하고 함께 일정을 정하세요!</Styled.Title>
           <CardComponent
-            cardInfo={{ name: detail?.name, startDate: detail?.startDate, endDate: detail?.endDate, place: detail?.place }}
+            cardInfo={{
+              name: detail?.name,
+              startDate: detail?.startDate,
+              endDate: detail?.endDate,
+              place: detail?.place,
+            }}
           />
         </Styled.MeetingInfoWrapper>
       </Greeting>
     )
   }
-  <Greeting buttons={['링크 공유하기']} onClickButton={() => {}}>
-    <Styled.MeetingInfoWrapper>
-      <Styled.Title>Loading...</Styled.Title>
-    </Styled.MeetingInfoWrapper>
-  </Greeting>
+  return (
+    <Greeting buttons={['링크 공유하기']} onClickButton={() => {}}>
+      <Styled.MeetingInfoWrapper>
+        <Styled.Title>Loading...</Styled.Title>
+      </Styled.MeetingInfoWrapper>
+    </Greeting>
+  )
 }
 
 const Styled = {
