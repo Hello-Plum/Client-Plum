@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Layout from '../../../components/common/Layout'
-import ConfirmMeetingComponent from './components/ConfirmMeetingComponent'
+import OwnerComponent from './components/OwnerComponent'
 
 export default function Confirm() {
 
   return (
     <Layout buttons={['확정']} isButtonActivated={true} header="회의 일정 확정">
       <Styled.PageWrapper>
-        <ConfirmMeetingComponent />
+        <OwnerComponent />
       </Styled.PageWrapper>
     </Layout>
   )
