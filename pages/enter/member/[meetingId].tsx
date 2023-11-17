@@ -5,28 +5,46 @@ import { checkAvailableTimeSteps } from '../../../data/available/checkAvailableT
 import { useCheckAvailableTime } from '../../../hooks/member/useCheckAvailableTime'
 import CheckAvailableBodyComponent from './CheckAvailableBodyComponent'
 import { styled } from 'styled-components'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import { useRouter } from 'next/router'
+import { useMeetingDetail } from '../../../hooks/meetingDetail/useMeetingDetail'
 
 export default function Available() {
   const { step, availableTimeInfo, setAvailableTimeInfoForm, handleBackBtnClick, handleBtnClick } = useCheckAvailableTime()
+  const router = useRouter()
+  const { meetingId } = router.query
+  const { isLoading, detail } = useMeetingDetail(meetingId)
   const currentStep = checkAvailableTimeSteps[step]
-  
+
   return (
-    <Layout 
+    <Layout
       buttons={['다음']}
       isButtonActivated={true}
-      header='가능한 시간 입력'
+      header="가능한 시간 입력"
       onClickBackButton={handleBackBtnClick}
-      onClickButton={handleBtnClick}>
-      <Styled.Info>
-        {`회의는 2시간동안 온라인(구글미트)로 진행될 예정이에요!`}
-      </Styled.Info>
-      <CheckAvailableTitleComponent step={currentStep} />
-      <CheckAvailableBodyComponent 
-        step={currentStep}
-        availableTimeInfo={availableTimeInfo}
-        setAvailableTimeInfo={setAvailableTimeInfoForm}
-      />
-      </Layout>
+      onClickButton={handleBtnClick}
+    >
+      {isLoading ? (
+        <Styled.Loading>
+          <AiOutlineLoading3Quarters size={45} />
+        </Styled.Loading>
+      ) : (
+        <>
+          <Styled.Info>
+            {`회의는 duration시간동안 ${detail?.place}${
+              detail?.placeDetail ? '(' + detail?.placeDetail + ')' : null
+            }로 진행될 예정이에요!`}
+          </Styled.Info>
+          <CheckAvailableTitleComponent step={currentStep} />
+          <CheckAvailableBodyComponent
+            step={currentStep}
+            meetingDetail={detail}
+            availableTimeInfo={availableTimeInfo}
+            setAvailableTimeInfo={setAvailableTimeInfoForm}
+          />
+        </>
+      )}
+    </Layout>
   )
 }
 
@@ -36,12 +54,18 @@ const Styled = {
     flex-direction: row;
     border-radius: 0.6rem;
     margin: 2.2rem 0px 1rem 1rem;
-    
+
     font-style: italic;
     font-size: 1.5rem;
     font-weight: bold;
     font-color: black;
     opacity: 80%;
     letter-spacing: -0.03rem;
+  `,
+  Loading: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   `,
 }

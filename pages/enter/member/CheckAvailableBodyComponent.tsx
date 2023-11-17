@@ -4,9 +4,11 @@ import { AvailableTimeInfo } from '../../../types/enter/checkMeetingInterface'
 import SetName from './components/SetName'
 import SetAvailableTimeTable from './components/SetAvailableTimeTable'
 import SetPriorityTimeTable from './components/SetPriorityTimeTable'
+import { Detail } from '../../../types/cardInfo/showInfoInterface'
 
 interface CheckAvailableBodyProps {
   step: string
+  meetingDetail: Detail | undefined
   availableTimeInfo: AvailableTimeInfo
   setAvailableTimeInfo: (input: Partial<AvailableTimeInfo>) => void
 }
@@ -18,12 +20,13 @@ const BodyTypes: { [key: string]: React.JSXElementConstructor<any> } = {
   //'end'
 }
 
-export default function CheckAvailableBodyComponent({ step, availableTimeInfo, setAvailableTimeInfo }: CheckAvailableBodyProps) {
+export default function CheckAvailableBodyComponent({ step, meetingDetail, availableTimeInfo, setAvailableTimeInfo }: CheckAvailableBodyProps) {
   const CurrentBodyComponent = BodyTypes[step]
 
   return (
     <Styled.BodyWrapper currentStep={step}>
       <CurrentBodyComponent
+        meetingDetail={meetingDetail}
         availableTimeInfo={availableTimeInfo}
         setAvailableTimeInfo={setAvailableTimeInfo}
       />

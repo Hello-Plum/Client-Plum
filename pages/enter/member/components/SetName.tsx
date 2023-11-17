@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { StepProps } from '../../../../types/enter/checkMeetingInterface'
 
 
-export default function SetName({ availableTimeInfo, setAvailableTimeInfo }: StepProps) {
+export default function SetName({ meetingDetail, availableTimeInfo, setAvailableTimeInfo }: StepProps) {
   return (
     <Styled.Input 
       id="name" 
