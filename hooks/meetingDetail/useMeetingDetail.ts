@@ -26,6 +26,7 @@ export const useMeetingDetail = (meetingId: string | string[] | undefined) => {
       const { data } = await getMeetingDetail(meetingId);
       setDetail(data)
     } catch (error) {
+      setIsLoading(true)
       console.log('[ERROR] getMeetingDetail error', error)
     } 
     setIsLoading(false)

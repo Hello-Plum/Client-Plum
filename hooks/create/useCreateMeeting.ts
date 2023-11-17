@@ -53,13 +53,6 @@ export const useCreateMeeting = () => {
         createMeeting()
         break
     }
-    /*
-    if (step === 0 || step === 1 || step === 2 || step === 3) {
-      setStep(step+1)
-    } else if (step === 4) {
-      createMeeting()
-    }
-    */
   }
 
   const createMeeting = async () => {

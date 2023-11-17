@@ -4,36 +4,35 @@ import styled from 'styled-components'
 import CardComponent from '../../components/atom/CardComponent'
 import { useMeetingDetail } from '../../hooks/meetingDetail/useMeetingDetail'
 import { useRouter } from 'next/router'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+
 
 export default function MeetingDetail() {
   const router = useRouter()
   const { meetingId } = router.query
   const { isLoading, detail } = useMeetingDetail(meetingId)
 
-  if (!isLoading) {
-    return (
-      // button 누르면 링크 복사
-      <Greeting buttons={['링크 공유하기']} onClickButton={() => {}}>
-        <Styled.MeetingInfoWrapper>
-          <Styled.Title>링크를 통해 초대하고 함께 일정을 정하세요!</Styled.Title>
-          <CardComponent
-            cardInfo={{
-              name: detail?.name,
-              startDate: detail?.startDate,
-              endDate: detail?.endDate,
-              place: detail?.place,
-            }}
-          />
-        </Styled.MeetingInfoWrapper>
-      </Greeting>
-    )
-  }
   return (
+    // button 누르면 링크 복사
     <Greeting buttons={['링크 공유하기']} onClickButton={() => {}}>
-      <Styled.MeetingInfoWrapper>
-        <Styled.Title>Loading...</Styled.Title>
-      </Styled.MeetingInfoWrapper>
-    </Greeting>
+    <Styled.MeetingInfoWrapper>
+      <Styled.Title>링크를 통해 초대하고 함께 일정을 정하세요!</Styled.Title>
+      {isLoading ? (
+        <Styled.Loading>
+          <AiOutlineLoading3Quarters size={45}/>
+        </Styled.Loading>
+      ) : (
+        <CardComponent
+          cardInfo={{
+            name: detail?.name,
+            startDate: detail?.startDate,
+            endDate: detail?.endDate,
+            place: detail?.place,
+          }}
+      />
+      )}
+    </Styled.MeetingInfoWrapper>
+  </Greeting>
   )
 }
 
@@ -48,5 +47,11 @@ const Styled = {
     font-weight: 550;
     letter-spacing: -0.03rem;
     padding: 2rem 0px 4rem;
+  `,
+  Loading: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   `,
 }
