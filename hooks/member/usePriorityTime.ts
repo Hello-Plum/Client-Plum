@@ -14,5 +14,11 @@ export const usePriorityTime = () => {
     })
   }
 
+  /*
+  const handlePointerEvent = (): boolean => {
+    return true
+  }
+  */
+
   return { groupSelectedTimeBlock, priorities, handlePriority }
 }

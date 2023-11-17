@@ -18,21 +18,23 @@ export const useCheckAvailableTime = () => {
 
   // 멤버가 선택한 시간들을 블록으로 묶기
   const groupConsecutiveNumbers = (blocks: number[]) => {
-    if (blocks.length === 0) return []
-    blocks.sort((a, b) => a - b); // 숫자 배열을 오름차순으로 정렬
+    const caculateBlocks = blocks.map((block) => Math.floor(block / 7) + 34 * (block % 7))
+
+    if (caculateBlocks.length === 0) return []
+    caculateBlocks.sort((a, b) => a - b); // 숫자 배열을 오름차순으로 정렬
 
     let result = []
-    let temp = [blocks[0]]
-    for (let i = 1; i < blocks.length; i++) {
-      if (blocks[i] - blocks[i - 1] === 1) { // 현재 숫자와 이전 숫자가 연속된 경우
-        temp.push(blocks[i]);
+    let temp = [caculateBlocks[0]]
+    for (let i = 1; i < caculateBlocks.length; i++) {
+      if (caculateBlocks[i] - caculateBlocks[i - 1] === 1) { // 현재 숫자와 이전 숫자가 연속된 경우
+        temp.push(caculateBlocks[i])
       } else { // 연속되지 않는 경우, 이전까지 묶인 숫자들을 결과 배열에 추가하고 새로운 묶음 시작
-        result.push(temp);
-        temp = [blocks[i]];
+        result.push(temp)
+        temp = [caculateBlocks[i]]
       }
     }
 
-    result.push(temp); // 마지막 묶음을 결과 배열에 추가
+    result.push(temp) // 마지막 묶음을 결과 배열에 추가
     return result
   }
 
