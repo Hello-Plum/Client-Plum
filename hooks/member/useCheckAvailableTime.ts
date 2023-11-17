@@ -39,7 +39,7 @@ export const useCheckAvailableTime = () => {
   const handleBackBtnClick = () => {
     // 전 step으로 가도록
     if (step === 0) {
-      router.push('/')
+      router.push('/enter/1')
     } else {
       setStep(step - 1)
       console.log('handleBackBtnClick step', step)
