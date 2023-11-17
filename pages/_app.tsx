@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import './create/components/SetAvailableDates.css'
 import './enter/member/components/SetAvailableTimeTable.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'semantic-ui-css/semantic.min.css'
 import { RecoilRoot } from 'recoil'
 import MobileWrapper from '../styles/MobileWrapper'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
