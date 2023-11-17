@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getMeetingDetail } from "../../api/createMeetingApi"
+import { getMeetingDetail } from "../../api/meetingDetailApi";
 
 interface Detail {
+  id: string
   name: string
   startDate: string
   endDate: string
@@ -11,6 +12,8 @@ interface Detail {
   password: string
   info: string
   confirmed: boolean
+  period: boolean
+  selectedWeek: Array<number>
 }
 
 export const useMeetingDetail = (meetingId: string | string[] | undefined) => {

@@ -1,5 +1,6 @@
 
 export interface GetMeetingDetailResponse {
+  id: string
   name: string
   startDate: string
   endDate: string
@@ -9,4 +10,6 @@ export interface GetMeetingDetailResponse {
   password: string
   info: string
   confirmed: boolean
+  period: true
+  selectedWeek: Array<number>
 }
