@@ -61,3 +61,8 @@ export const groupSelectedTimeBlockList = atom<number[][]>({
   key: 'groupSelectedTimeBlockList',
   default: [[0]],
 })
+
+export const priorityListState = atom<number[][]>({
+  key: 'priorityListState',
+  default: [],
+})

@@ -30,7 +30,7 @@ export default function TimeTable() {
             return (
               <TableRow
                 step="data"
-                contents={slots.map((slot, i) => String(Number(slot) + tableRow))}
+                contents={slots.map((slot) => String(Number(slot) + tableRow))}
               />
             )
           })}
