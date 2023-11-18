@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ShowMeetingInfo } from '../../types/cardInfo/showInfoInterface'
+import { Detail } from '../../types/cardInfo/showInfoInterface'
 
 interface CardProps {
-  cardInfo: Partial<ShowMeetingInfo>
+  cardInfo: Partial<Detail>
 }
 
 export default function CardComponent(props: CardProps) {
@@ -37,6 +37,7 @@ const Styled = {
     letter-spacing: -0.03rem;
   `,
   ListWrapper : styled.ul`
+    padding: 0px;
   `,
   List : styled.li`
     color: black;  
