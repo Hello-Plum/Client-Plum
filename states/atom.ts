@@ -66,3 +66,9 @@ export const priorityListState = atom<number[][]>({
   key: 'priorityListState',
   default: [],
 })
+
+// 회의 확정하기
+export const passwordState = atom<string>({
+  key: 'passwordState',
+  default: '',
+})

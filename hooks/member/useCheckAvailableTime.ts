@@ -1,6 +1,6 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { availableTimeInfoState, checkAvailableTimeState, groupSelectedTimeBlockList, memberSelectedTimeBlockList } from "../../states/atom"
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/router"
 import { AvailableTimeInfo } from "../../types/enter/checkMeetingInterface"
 
 export const useCheckAvailableTime = () => {
@@ -9,7 +9,7 @@ export const useCheckAvailableTime = () => {
   const selectedTimeBlock = useRecoilValue(memberSelectedTimeBlockList)
   const setGroupSelectedTimeBlock = useSetRecoilState(groupSelectedTimeBlockList)
   const router = useRouter()
-
+  const { meetingId } = router.query
 
   const setAvailableTimeInfoForm = (input: Partial<AvailableTimeInfo>) => {
     setAvailableTimeInfo({ ...availableTimeInfo, ...input })
@@ -41,7 +41,7 @@ export const useCheckAvailableTime = () => {
   const handleBackBtnClick = () => {
     // 전 step으로 가도록
     if (step === 0) {
-      router.push('/enter/1')
+      router.push(`/enter/${meetingId}`)
     } else {
       setStep(step - 1)
       console.log('handleBackBtnClick step', step)
