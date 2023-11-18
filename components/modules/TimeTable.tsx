@@ -54,7 +54,9 @@ export default function TimeTable({ meetingDetail, availableTimeInfo }: TimeTabl
 }
 
 const Styled = {
-  TableWrapper: styled.div``,
+  TableWrapper: styled.div`
+    margin: 1rem;
+  `,
   Table: styled.table`
     border-collapse: collapse;
   `,

@@ -26,9 +26,7 @@ export default function TableRow({ contents, meetingDetail, availableTimeInfo }:
             onClick={handlePriority}
             isSelected={mergeRowFirstList.includes(content)}
             rowSpan={mergeRowFirstList.includes(content) ? availableGroupList.filter((arr: any) => arr[0] === content)[0].length : 1}
-          >
-            {content}
-          </Styled.Td>
+          />
         )
       })}
     </Styled.Tr>
