@@ -11,10 +11,14 @@ interface TableRowBodyProps {
 }
 
 export default function TableRow({ contents, meetingDetail, availableTimeInfo }: TableRowBodyProps) {
-  const { groupSelectedTimeBlock, priorities, handlePriority } = usePriorityTime()
-
-  const availableGroupList: any = [...groupSelectedTimeBlock]
+  const { priorities, handlePriority } = usePriorityTime()
+  const availableGroupList: any = [...availableTimeInfo.availableTimeList]
   const mergeRowFirstList = availableGroupList.map((group: any) => group[0])
+
+  const savePriority = (content: number) => {
+    console.log('priorities', priorities)
+    return priorities.indexOf(content) + 1
+  }
 
   return (
     <Styled.Tr>
@@ -24,9 +28,12 @@ export default function TableRow({ contents, meetingDetail, availableTimeInfo }:
             id={`${content}`}
             key={content}
             onClick={handlePriority}
-            isSelected={mergeRowFirstList.includes(content)}
+            isAvailabled={mergeRowFirstList.includes(content)}
             rowSpan={mergeRowFirstList.includes(content) ? availableGroupList.filter((arr: any) => arr[0] === content)[0].length : 1}
-          />
+          >
+          {(priorities.includes(content)) ? savePriority(content) : ''}
+          </Styled.Td>
+
         )
       })}
     </Styled.Tr>
@@ -34,7 +41,7 @@ export default function TableRow({ contents, meetingDetail, availableTimeInfo }:
 }
 const Styled = {
   Tr: styled.tr``,
-  Td: styled.td<{ isSelected : boolean }>`
+  Td: styled.td<{ isAvailabled : boolean }>`
     width: 4.5rem;
     height: 1.4rem;
     text-align: center;
@@ -43,8 +50,8 @@ const Styled = {
     vertical-align: top; /* 위 */
     vertical-align: bottom; /* 아래 */
     vertical-align: middle;
-    background-color: ${({ isSelected }) => (isSelected ? 'blue' : 'white')};
+    background-color: ${({ isAvailabled }) => (isAvailabled ? 'blue' : 'white')};
     cursor: pointer;
-    pointer-events: ${({ isSelected }) => (isSelected ? 'auto' : 'none')};
+    pointer-events: ${({ isAvailabled }) => (isAvailabled ? 'auto' : 'none')}; d
   `,
 }

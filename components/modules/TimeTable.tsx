@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import TableRow from '../atom/table/TableRow'
-import { AvailableTimeInfo, StepProps } from '../../types/enter/checkMeetingInterface'
+import { AvailableTimeInfo } from '../../types/enter/checkMeetingInterface'
 import { Detail } from '../../types/cardInfo/showInfoInterface'
-import { usePriorityTime } from '../../hooks/member/usePriorityTime'
 
 interface TimeTableBodyProps {
   meetingDetail: Detail
   availableTimeInfo: AvailableTimeInfo
+  setAvailableTimeInfo: (input: Partial<AvailableTimeInfo>) => void
 }
 
-export default function TimeTable({ meetingDetail, availableTimeInfo }: TimeTableBodyProps) {
-  const { groupSelectedTimeBlock } = usePriorityTime()
+export default function TimeTable({ meetingDetail, availableTimeInfo, setAvailableTimeInfo }: TimeTableBodyProps) {
   const [mounted, setMounted] = useState<boolean>(false)
-  const availableGroupList: any = [...groupSelectedTimeBlock]
+  const availableGroupList: any = [...availableTimeInfo.availableTimeList]
   const mergeRowList = availableGroupList.map((group: any) => group.slice(1)).flat()
-  console.log('mergeRowList', mergeRowList)
-  // 각 배열 원소들 빼서 넣기 -> 
   
   useEffect(() => {
     setMounted(true)
