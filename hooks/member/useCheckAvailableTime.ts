@@ -5,11 +5,11 @@ import { AvailableTimeInfo } from "../../types/enter/checkMeetingInterface"
 import { postCheckMemberAvailable } from '../../api/checkMemberAvailableApi'
 
 export const useCheckAvailableTime = () => {
-  const [step, setStep] = useRecoilState(checkAvailableTimeState)
+  const [page, setPage] = useRecoilState(checkAvailableTimeState)
   const [isActivated, setIsActivated] = useRecoilState(checkMemberAvailableBtnActivatedState)
   const [availableTimeInfo, setAvailableTimeInfo] = useRecoilState(availableTimeInfoState)
   const selectedTimeBlock = useRecoilValue(memberSelectedTimeBlockList)
-  const priorities = useRecoilValue(priorityListState)
+  const priorityList = useRecoilValue(priorityListState)
   const router = useRouter()
   const { meetingId } = router.query
   
@@ -44,25 +44,25 @@ export const useCheckAvailableTime = () => {
   }
 
   const handleBackBtnClick = () => {
-    if (step === 0) router.push(`/enter/${meetingId}`)
-    else setStep(step - 1)
+    if (page === 0) router.push(`/enter/${meetingId}`)
+    else setPage(page - 1)
   }
 
   const handleBtnClick = () => {
-    switch (step) {
+    switch (page) {
       case 0:
-        setStep(step + 1)
+        setPage(page + 1)
         setIsActivated(false)
         break
       case 1:
         const blocks = [...selectedTimeBlock]
         const groupList = groupConsecutiveNumbers(blocks)
         setAvailableTimeInfoForm({ availableTimeList: groupList })
-        setStep(step + 1)
+        setPage(page + 1)
         setIsActivated(false)
         break
       case 2:
-        setAvailableTimeInfoForm({ priorities: priorities })
+        setAvailableTimeInfoForm({ priorities: priorityList })
         checkMemberAvailable()
         break
     }
@@ -70,7 +70,20 @@ export const useCheckAvailableTime = () => {
 
   const checkMemberAvailable = async () => {
     try {
-      const { data } = await postCheckMemberAvailable(meetingId, availableTimeInfo)
+      const groupList = [...availableTimeInfo.availableTimeList]
+      const timeGroupList = groupList.map((time) => { 
+        return { 
+          'startTimeIdx': time[0], 
+          'endTimeIdx': time[time.length - 1] 
+        }
+      })
+      const requestData = {
+        name: availableTimeInfo.name,
+        availableTimes: timeGroupList,
+        priorities: priorityList
+      }
+
+      const { data } = await postCheckMemberAvailable(meetingId, requestData)
       console.log('data', data)
       router.push(`/`)
     } catch (error) {
@@ -78,5 +91,5 @@ export const useCheckAvailableTime = () => {
     }
   }
 
-  return { step, isActivated, availableTimeInfo, setAvailableTimeInfoForm, handleBackBtnClick, handleBtnClick }
+  return { page, isActivated, availableTimeInfo, setAvailableTimeInfoForm, handleBackBtnClick, handleBtnClick }
 }
