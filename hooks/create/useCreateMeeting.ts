@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil'
-import { createMeetingStepState, currentActivatedState, meetingInfoState } from '../../states/atom'
+import { createMeetingStepState, currentCreateMeetingBtnActivatedState, meetingInfoState } from '../../states/atom'
 import { useRouter } from 'next/navigation'
 import { MeetingInfo } from '../../types/create/createMeetingInterface'
 import { postCreateMeeting } from '../../api/createMeetingApi'
@@ -7,7 +7,7 @@ import { postCreateMeeting } from '../../api/createMeetingApi'
 export const useCreateMeeting = () => {
   const [step, setStep] = useRecoilState(createMeetingStepState)
   const [meetingInfo, setMeetingInfo] = useRecoilState(meetingInfoState)
-  const [isActivated, setIsActivated] = useRecoilState(currentActivatedState)
+  const [isActivated, setIsActivated] = useRecoilState(currentCreateMeetingBtnActivatedState)
   const router = useRouter()
 
   const setMeetingInfoForm = (input: Partial<MeetingInfo>) => {
@@ -31,7 +31,6 @@ export const useCreateMeeting = () => {
   }
 
   const handleBtnClick = () => { // step : 0~4
-    /** switch-case */
     switch (step) {
       case 0:
         setStep(step+1)
@@ -60,7 +59,6 @@ export const useCreateMeeting = () => {
       const { data } = await postCreateMeeting(meetingInfo)
       console.log('id', data?.id)
       router.push(`/meetingDetail/${data?.id}`)
-      
     } catch (error) {
       console.log('[ERROR] createMeeting error', error)
     }

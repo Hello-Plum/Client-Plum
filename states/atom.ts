@@ -8,8 +8,8 @@ export const createMeetingStepState = atom<number>({
   default: 0,
 })
 
-export const currentActivatedState = atom<boolean>({
-  key: 'currentActivatedState',
+export const currentCreateMeetingBtnActivatedState = atom<boolean>({
+  key: 'currentCreateMeetingBtnActivatedState',
   default: false,
 })
 
@@ -31,6 +31,11 @@ export const meetingInfoState = atom<MeetingInfo>({
 export const checkAvailableTimeState = atom<number>({
   key: 'checkAvailableTimeState',
   default: 0
+})
+
+export const checkMemberAvailableBtnActivatedState = atom<boolean>({
+  key: 'checkMemberAvailableBtnActivatedState',
+  default: false,
 })
 
 export const availableTimeInfoState = atom<AvailableTimeInfo>({
@@ -57,12 +62,7 @@ export const memberSelectedTimeBlockList = atom<Array<number>>({
   default: [],
 })
 
-export const groupSelectedTimeBlockList = atom<number[][]>({
-  key: 'groupSelectedTimeBlockList',
-  default: [[0]],
-})
-
-export const priorityListState = atom<number[][]>({
+export const priorityListState = atom<Array<number>>({
   key: 'priorityListState',
   default: [],
 })

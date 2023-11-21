@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 import { useMeetingDetail } from '../../../hooks/meetingDetail/useMeetingDetail'
 
 export default function Available() {
-  const { step, availableTimeInfo, setAvailableTimeInfoForm, handleBackBtnClick, handleBtnClick } = useCheckAvailableTime()
+  const { step, isActivated, availableTimeInfo, setAvailableTimeInfoForm, handleBackBtnClick, handleBtnClick } = useCheckAvailableTime()
   const router = useRouter()
   const { meetingId } = router.query
   const { isLoading, detail } = useMeetingDetail(meetingId)
@@ -19,7 +19,7 @@ export default function Available() {
   return (
     <Layout
       buttons={['다음']}
-      isButtonActivated={true}
+      isButtonActivated={isActivated}
       header="가능한 시간 입력"
       onClickBackButton={handleBackBtnClick}
       onClickButton={handleBtnClick}
