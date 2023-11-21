@@ -1,8 +1,14 @@
 export interface CheckMemberAvailableRequest {
   name: string
-  availableTimeList: number[][]
+  availableTimes: AvailableTimes[]
   priorities: number[]
 }
+
+export type AvailableTimes = {
+  startTimeIdx: number
+  endTimeIdx: number
+}
+
 export interface CheckMemberAvailableResponse {
   id: string
   name: string

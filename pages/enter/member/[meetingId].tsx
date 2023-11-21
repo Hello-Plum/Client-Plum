@@ -10,11 +10,11 @@ import { useRouter } from 'next/router'
 import { useMeetingDetail } from '../../../hooks/meetingDetail/useMeetingDetail'
 
 export default function Available() {
-  const { step, isActivated, availableTimeInfo, setAvailableTimeInfoForm, handleBackBtnClick, handleBtnClick } = useCheckAvailableTime()
+  const { page, isActivated, availableTimeInfo, setAvailableTimeInfoForm, handleBackBtnClick, handleBtnClick } = useCheckAvailableTime()
   const router = useRouter()
   const { meetingId } = router.query
   const { isLoading, detail } = useMeetingDetail(meetingId)
-  const currentStep = checkAvailableTimeSteps[step]
+  const currentStep = checkAvailableTimeSteps[page]
 
   return (
     <Layout

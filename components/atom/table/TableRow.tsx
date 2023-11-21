@@ -11,13 +11,13 @@ interface TableRowBodyProps {
 }
 
 export default function TableRow({ contents, meetingDetail, availableTimeInfo }: TableRowBodyProps) {
-  const { priorities, handlePriority } = usePriorityTime()
+  const { priorityList, handlePriority } = usePriorityTime()
   const availableGroupList: any = [...availableTimeInfo.availableTimeList]
   const mergeRowFirstList = availableGroupList.map((group: any) => group[0])
 
   const savePriority = (content: number) => {
-    console.log('priorities', priorities)
-    return priorities.indexOf(content) + 1
+    console.log('priorityList', priorityList)
+    return priorityList.indexOf(content) + 1
   }
 
   return (
@@ -31,7 +31,7 @@ export default function TableRow({ contents, meetingDetail, availableTimeInfo }:
             isAvailabled={mergeRowFirstList.includes(content)}
             rowSpan={mergeRowFirstList.includes(content) ? availableGroupList.filter((arr: any) => arr[0] === content)[0].length : 1}
           >
-          {(priorities.includes(content)) ? savePriority(content) : ''}
+          {(priorityList.includes(content)) ? savePriority(content) : ''}
           </Styled.Td>
 
         )
