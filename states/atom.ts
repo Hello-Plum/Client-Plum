@@ -1,6 +1,7 @@
 import { atom } from 'recoil'
 import { MeetingInfo } from '../types/create/createMeetingInterface'
 import { AvailableTimeInfo } from '../types/enter/checkMeetingInterface'
+import { CheckHostPasswordRequest } from '../types/enter/checkHostPasswordBody'
 
 // 회의 생성하기
 export const createMeetingStepState = atom<number>({
@@ -20,7 +21,8 @@ export const meetingInfoState = atom<MeetingInfo>({
     startDate: '',
     endDate: '',
     place: '',
-    placeDetail: '', 
+    placeDetail: '',
+    duration: '', 
     host: '',
     password: '',
     info: '' 
@@ -68,7 +70,9 @@ export const priorityListState = atom<Array<number>>({
 })
 
 // 회의 확정하기
-export const passwordState = atom<string>({
+export const passwordState = atom<CheckHostPasswordRequest>({
   key: 'passwordState',
-  default: '',
+  default: {
+    password: ''
+  },
 })

@@ -22,7 +22,7 @@ export default function Password() {
           id={'hostpassword'}
           type={'password'}
           placeholder={'방 비밀번호'} 
-          onChangeInput={(e) => setPassword(e.target.value)}
+          onChangeInput={(e) => setPassword({ password: e.target.value })}
         />
       </Styled.InputWrapper>
     </Layout>
