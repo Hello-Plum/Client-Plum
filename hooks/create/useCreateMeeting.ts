@@ -17,6 +17,7 @@ export const useCreateMeeting = () => {
     else if (input.startDate && input.endDate) setIsActivated(true)
     else if (input.place) setIsActivated(true)
     else if (input.placeDetail || !input.placeDetail) setIsActivated(true)
+    else if (input.duration) setIsActivated(true)
     else if (input.host && input.password) setIsActivated(true)
     else if (input.info) setIsActivated(true)
     else setIsActivated(false)
@@ -30,7 +31,7 @@ export const useCreateMeeting = () => {
     }
   }
 
-  const handleBtnClick = () => { // step : 0~4
+  const handleBtnClick = async () => { // step : 0~4
     switch (step) {
       case 0:
         setStep(step+1)
@@ -49,7 +50,11 @@ export const useCreateMeeting = () => {
         setIsActivated(false)
         break
       case 4:
-        createMeeting()
+        setStep(step+1)
+        setIsActivated(false)
+        break
+      case 5:
+        await createMeeting()
         break
     }
   }

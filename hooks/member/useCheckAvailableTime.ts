@@ -48,7 +48,7 @@ export const useCheckAvailableTime = () => {
     else setPage(page - 1)
   }
 
-  const handleBtnClick = () => {
+  const handleBtnClick = async () => {
     switch (page) {
       case 0:
         setPage(page + 1)
@@ -63,7 +63,7 @@ export const useCheckAvailableTime = () => {
         break
       case 2:
         setAvailableTimeInfoForm({ priorities: priorityList })
-        checkMemberAvailable()
+        await checkMemberAvailable()
         break
     }
   }

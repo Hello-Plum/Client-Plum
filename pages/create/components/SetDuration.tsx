@@ -10,7 +10,7 @@ export default function SetDuration({ meetingInfo, setMeetingInfo }: StepProps) 
         return (
           <Styled.Button 
             key={i + duration.enum}
-            onClick={(e) => { setMeetingInfo({ place: duration.enum }) }} // 회의 진행 시간임..
+            onClick={(e) => { setMeetingInfo({ duration: duration.time }) }} // 회의 진행 시간임..
           >
             {duration.time}
           </Styled.Button>
