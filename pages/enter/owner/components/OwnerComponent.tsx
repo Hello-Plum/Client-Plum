@@ -1,5 +1,5 @@
 import React from 'react'
-import Tab, { TabProps } from 'react-bootstrap/Tab'
+import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 import SetBestMeetingTime from './SetBestMeetingTime'
 import SetEntireAvailableTimeTable from './SetEntireAvailableTimeTable'
@@ -8,11 +8,12 @@ import styled from 'styled-components'
 export default function OwnerComponent() {
   return (
     <Styled.TabWrapper>
-      <Tabs defaultActiveKey="profile" id="fill-tab-example" className="mb-3" fill>
-        <Tab eventKey="home" title="최적의 회의시간">
+      <Tabs 
+        defaultActiveKey="BestMeetingTime" id="fill-tab-example" className="mb-3" fill>
+        <Tab id='bestTime' eventKey="BestMeetingTime" title="최적의 회의시간">
           <SetBestMeetingTime />
         </Tab>
-        <Tab eventKey="profile" title="종합 일정 시간표">
+        <Tab id='entireTime' eventKey="EntireAvailableTimeTable" title="종합 일정 시간표">
           <SetEntireAvailableTimeTable />
         </Tab>
       </Tabs>

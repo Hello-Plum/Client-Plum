@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import TimeTable from '../../../../components/modules/TimeTable'
+import TimeTable from './TimeTable'
 import { StepProps } from '../../../../types/enter/checkMeetingInterface'
 import WeekComponent from '../../../../components/atom/WeekComponent'
 import TimeComponent from '../../../../components/atom/TimeComponent'
@@ -31,5 +31,4 @@ const Styled = {
     display: flex;
     flex-direction: row;
   `,
-
 }

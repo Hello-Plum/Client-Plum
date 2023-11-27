@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { usePriorityTime } from '../../../hooks/member/usePriorityTime'
-import { Detail } from '../../../types/cardInfo/showInfoInterface'
-import { AvailableTimeInfo } from '../../../types/enter/checkMeetingInterface'
+import { usePriorityTime } from '../../../../hooks/member/usePriorityTime'
+import { Detail } from '../../../../types/cardInfo/showInfoInterface'
+import { AvailableTimeInfo } from '../../../../types/enter/checkMeetingInterface'
 
 interface TableRowBodyProps {
   contents: number[]

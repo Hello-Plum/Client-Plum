@@ -1,24 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import Layout from '../../../components/common/Layout'
 import OwnerComponent from './components/OwnerComponent'
 import { useConfirmMeeting } from '../../../hooks/owner/useConfirmAvailableTime'
+import TabLayout from '../../../components/common/TabLayout'
+import { useEntireTimeTable } from '../../../hooks/owner/useEntireTimeTable'
+import { useRouter } from 'next/router'
 
 export default function Confirm() {
   const { handleBackBtnClick, handleConfirmBtnClick } = useConfirmMeeting()
-
+  
   return (
-    <Layout 
-      buttons={['확정']} 
-      isButtonActivated={true} 
+    <TabLayout
       header="회의 일정 확정"
       onClickBackButton={handleBackBtnClick}
-      onClickButton={handleConfirmBtnClick}
     >
       <Styled.PageWrapper>
         <OwnerComponent />
       </Styled.PageWrapper>
-    </Layout>
+    </TabLayout>
   )
 }
 

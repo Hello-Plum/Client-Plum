@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import TableRow from '../atom/table/TableRow'
-import { AvailableTimeInfo } from '../../types/enter/checkMeetingInterface'
-import { Detail } from '../../types/cardInfo/showInfoInterface'
+import TableRow from './TableRow'
+import { AvailableTimeInfo } from '../../../../types/enter/checkMeetingInterface'
 
 interface TimeTableBodyProps {
-  meetingDetail: Detail
   availableTimeInfo: AvailableTimeInfo
-  setAvailableTimeInfo: (input: Partial<AvailableTimeInfo>) => void
 }
 
-export default function TimeTable({ meetingDetail, availableTimeInfo, setAvailableTimeInfo }: TimeTableBodyProps) {
+export default function TimeTable() {
   const [mounted, setMounted] = useState<boolean>(false)
-  const availableGroupList: any = [...availableTimeInfo.availableTimeList]
-  const mergeRowList = availableGroupList.map((group: any) => group.slice(1)).flat()
   
   useEffect(() => {
     setMounted(true)
@@ -38,9 +33,7 @@ export default function TimeTable({ meetingDetail, availableTimeInfo, setAvailab
             return (
               <TableRow
                 key={tableRow}
-                contents={slots.map((slot) => Number(slot + tableRow)).filter((slot) => { return !mergeRowList.includes(slot) })}
-                meetingDetail={meetingDetail}
-                availableTimeInfo={availableTimeInfo}
+                elements={slots.map((slot) => Number(slot + tableRow))}
               />
             )
           })}
