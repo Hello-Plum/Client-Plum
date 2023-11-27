@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
 import TitleComponent from '../../../../components/modules/TitleComponent'
-import { AvailableTimeInfo } from '../../../../types/enter/checkMeetingInterface'
 import TimeTable from './TimeTable'
 import WeekComponent from '../../../../components/atom/WeekComponent'
 import TimeComponent from '../../../../components/atom/TimeComponent'

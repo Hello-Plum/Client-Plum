@@ -90,8 +90,9 @@ const Styled = {
 
     width: 100%;
     padding: 1rem;
-    border-radius: 0.6rem;
-    background: black;
+    border: 2px solid #3182F6;
+    border-radius: 1.5rem;
+    background: #3182F6;
 
     text-align: center;
     color: white;
@@ -103,14 +104,13 @@ const Styled = {
   StrButtonLeft: styled.button`
     width: 100%;
     padding: 1rem;
-    border-radius: 0.6rem;
-    background: black;
+    border: none;
+    border-radius: 1.5rem;
+    background: #F2F4F6;
     
-    background: rgba(218, 218, 218, 1);
     margin-right: 0.9rem;
-    
     text-align: center;
-    color: black;
+    color: #4E5867;
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.052rem;

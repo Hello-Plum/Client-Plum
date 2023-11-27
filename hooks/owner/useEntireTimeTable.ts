@@ -1,6 +1,5 @@
 import { useRecoilState } from "recoil"
 import { getEntireTimeTable } from "../../api/checkEntireTimeTableApi"
-import { useRouter } from "next/router"
 import { CheckEntireTimeTableResponse } from "../../types/enter/checkEntireTimeTableBody"
 import { entireTimeTableListState, entireTimeTableMemberListState } from "../../states/atom"
 import { useEffect } from "react"

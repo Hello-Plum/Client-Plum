@@ -53,7 +53,7 @@ const Styled = {
     width: 100%;
     padding: 1.5rem;
     border-radius: 0.6rem;
-    background: ${({ isClicked }) => (isClicked ? 'black' : 'gray')};
+    background: ${({ isClicked }) => (isClicked ? '#3182F6' : '#F2F4F6')};
 
     text-align: center;
     color: white;

@@ -28,7 +28,7 @@ const Styled = {
     width: 100%;
     height: 4.2rem;
     border: 0.1rem solid #8e8e8e;
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
 
     font-size: 1.3rem;
     padding: 1rem;

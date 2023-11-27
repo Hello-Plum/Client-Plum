@@ -108,8 +108,9 @@ const Styled = {
 
     width: 100%;
     padding: 1.3rem;
-    border-radius: 0.6rem;
-    background: ${({ isActivated }) => (isActivated? 'black' : 'gray')};
+    border: none;
+    border-radius: 1.5rem;
+    background: ${({ isActivated }) => (isActivated? '#3182F6' : '#F2F4F6')};
 
     text-align: center;
     color: ${({ isActivated }) => (isActivated? 'white' : 'black')};
@@ -122,10 +123,11 @@ const Styled = {
   StrButtonLeft: styled.button`
     width: 100%;
     padding: 1rem;
-    border-radius: 0.6rem;
-    background: black;
+    border: none;
+    border-radius: 1.5rem;
+    background: #3182F6;
     
-    background: rgba(218, 218, 218, 1);
+    background: #F2F4F6;
     margin-right: 0.9rem;
     
     text-align: center;

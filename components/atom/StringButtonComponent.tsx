@@ -25,11 +25,12 @@ const Styled = {
   Button: styled.button<{ isActivated: boolean }>`
     width: 100%;
     padding: 1.5rem;
-    border-radius: 0.6rem;
-    background: ${({ isActivated }) => (isActivated ? 'black' : 'gray')};
+    border: none;
+    border-radius: 1.5rem;
+    background-color: ${({ isActivated }) => (isActivated ? '#3182F6' : '#F2F4F6')};
 
     text-align: center;
-    color: white;
+    color: ${({ isActivated }) => (isActivated ? '#F2F4F6' : '#4E5867')};
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.052rem;

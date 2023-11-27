@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import TableRow from './TableRow'
-import { AvailableTimeInfo } from '../../../../types/enter/checkMeetingInterface'
-
-interface TimeTableBodyProps {
-  availableTimeInfo: AvailableTimeInfo
-}
 
 export default function TimeTable() {
   const [mounted, setMounted] = useState<boolean>(false)

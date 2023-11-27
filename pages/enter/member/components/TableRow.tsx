@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { usePriorityTime } from '../../../../hooks/member/usePriorityTime'
 import { Detail } from '../../../../types/cardInfo/showInfoInterface'
@@ -45,12 +45,15 @@ const Styled = {
     width: 4.5rem;
     height: 1.4rem;
     text-align: center;
-    border: 1px solid #000;
+    border: 0.5px solid #717B88;
 
     vertical-align: top; /* 위 */
     vertical-align: bottom; /* 아래 */
     vertical-align: middle;
-    background-color: ${({ isAvailabled }) => (isAvailabled ? 'blue' : 'white')};
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 700;
+    background-color: ${({ isAvailabled }) => (isAvailabled ? 'rgba(49, 130, 246, 1)' : 'white')};
     cursor: pointer;
     pointer-events: ${({ isAvailabled }) => (isAvailabled ? 'auto' : 'none')}; d
   `,

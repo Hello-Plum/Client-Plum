@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { usePriorityTime } from '../../../../hooks/member/usePriorityTime'
-import { AvailableTimeInfo } from '../../../../types/enter/checkMeetingInterface'
 import { useRouter } from 'next/router'
 import { useEntireTimeTable } from '../../../../hooks/owner/useEntireTimeTable'
 
@@ -37,12 +35,12 @@ const Styled = {
     width: 4.5rem;
     height: 1.4rem;
     text-align: center;
-    border: 1px solid #000;
+    border: 0.5px solid #717B88;
 
     vertical-align: top; /* 위 */
     vertical-align: bottom; /* 아래 */
     vertical-align: middle;
-    background-color: ${({ isAvailabled }) => (isAvailabled ? `rgba(0, 0, 255, ${isAvailabled})` : 'white')};
+    background-color: ${({ isAvailabled }) => (isAvailabled ? `rgba(49, 130, 246, ${isAvailabled})` : 'white')};
     cursor: pointer;
   `,
 }

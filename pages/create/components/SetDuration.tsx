@@ -31,7 +31,7 @@ const Styled = {
     width: 50%;
     padding: 1.5rem;
     border-radius: 0.6rem;
-    background: black;
+    background: #3182F6;
 
     text-align: center;
     color: white;
