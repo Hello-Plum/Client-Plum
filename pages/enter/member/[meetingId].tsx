@@ -31,7 +31,7 @@ export default function Available() {
       ) : (
         <>
           <Styled.Info>
-            {`회의는 duration시간동안 ${detail?.place}${
+            {`회의는 ${detail?.duration}시간동안 ${detail?.place}${
               detail?.placeDetail ? '(' + detail?.placeDetail + ')' : null
             }로 진행될 예정이에요!`}
           </Styled.Info>

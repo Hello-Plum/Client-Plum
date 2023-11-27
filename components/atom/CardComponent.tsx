@@ -14,6 +14,7 @@ export default function CardComponent(props: CardProps) {
       <Styled.ListWrapper>
         <Styled.List>{`${cardInfo.startDate} ~ ${cardInfo.endDate}`}</Styled.List>
         <Styled.List>{cardInfo.place}</Styled.List>
+        <Styled.List>{cardInfo.info}</Styled.List>
       </Styled.ListWrapper>
     </Styled.CardWrapper>
   )
