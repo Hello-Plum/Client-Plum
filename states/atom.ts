@@ -76,3 +76,13 @@ export const passwordState = atom<CheckHostPasswordRequest>({
     password: ''
   },
 })
+
+export const entireTimeTableListState = atom<string[][]>({
+  key: 'entireTimeTableListState',
+  default: Array.from({ length: 238 }, () => Array().fill('')),
+})
+
+export const entireTimeTableMemberListState = atom<string[]>({
+  key: 'entireTimeTableMemberListState',
+  default: [],
+})
