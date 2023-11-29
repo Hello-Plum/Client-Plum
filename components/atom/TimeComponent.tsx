@@ -1,12 +1,12 @@
 import React from 'react'
 import { styled } from 'styled-components'
-import { timeList, weekList } from '../../data/available/checkAvailableTimeTableData'
+import { timeList } from '../../data/available/checkAvailableTimeTableData'
 
 export default function TimeComponent() {
   return (
     <Styled.TimeContainer>
       {timeList.map((time, i) => {
-        return <Styled.Time key={time}>{i}</Styled.Time>
+        return <Styled.Time key={time+i}>{time}</Styled.Time>
       })}
     </Styled.TimeContainer>
   )

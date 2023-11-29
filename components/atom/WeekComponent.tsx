@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components'
-import { timeList, weekList } from '../../data/available/checkAvailableTimeTableData'
+import { weekList } from '../../data/available/checkAvailableTimeTableData'
 
 export default function WeekComponent() {
   return (
