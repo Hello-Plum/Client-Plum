@@ -26,7 +26,7 @@ export default function Greeting(props: GreetingProps) {
 
       <Styled.Main>{children}</Styled.Main>
 
-      <Styled.Footer isButtons={buttons?.length === 2}>
+      <Styled.Footer $isButtons={buttons?.length === 2}>
         {buttons && buttons?.length == 2 && (
           <Styled.StrButtonLeft onClick={onClickButtonLeft}>{buttons[1]}</Styled.StrButtonLeft>
         )}
@@ -75,9 +75,9 @@ const Styled = {
     align-items: center;
     height: 100%;
   `,
-  Footer: styled.footer<{ isButtons: boolean }>`
+  Footer: styled.footer<{ $isButtons: boolean }>`
     display: flex;
-    flex-direction: ${({ isButtons }) => (isButtons? 'row' : 'column')};
+    flex-direction: ${({ $isButtons }) => ($isButtons? 'row' : 'column')};
     justify-content: space-between;
     align-items: center;
     min-width: 32rem;

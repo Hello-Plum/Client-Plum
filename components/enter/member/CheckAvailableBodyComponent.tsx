@@ -24,7 +24,7 @@ export default function CheckAvailableBodyComponent({ step, meetingDetail, avail
   const CurrentBodyComponent = BodyTypes[step]
 
   return (
-    <Styled.BodyWrapper currentStep={step}>
+    <Styled.BodyWrapper $currentStep={step}>
       <CurrentBodyComponent
         meetingDetail={meetingDetail}
         availableTimeInfo={availableTimeInfo}
@@ -35,11 +35,11 @@ export default function CheckAvailableBodyComponent({ step, meetingDetail, avail
 }
 
 const Styled = {
-  BodyWrapper: styled.div<{ currentStep: string }>`
+  BodyWrapper: styled.div<{ $currentStep: string }>`
     display: flex;
     width: 100%;
     height: 100%;
-    margin: ${({ currentStep }) => (currentStep === 'availableTimeTable' ? '-1rem 0px 2rem -1rem': '0px')};
-    padding: ${({ currentStep }) => (currentStep === 'availableTimeTable' ? '0px': '1rem')};
+    margin: ${({ $currentStep }) => ($currentStep === 'availableTimeTable' ? '-1rem 0px 2rem -1rem': '0px')};
+    padding: ${({ $currentStep }) => ($currentStep === 'availableTimeTable' ? '0px': '1rem')};
   `,
 }

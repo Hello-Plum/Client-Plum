@@ -31,14 +31,14 @@ export default function Layout(props: LayoutProps) {
 
       <Styled.Main>{children}</Styled.Main>
 
-      <Styled.Footer isButtons={buttons?.length === 2}>
+      <Styled.Footer $isButtons={buttons?.length === 2}>
         {buttons && buttons?.length == 2 && (
           <Styled.StrButtonLeft onClick={onClickButtonLeft}>
             {buttons[1]}
           </Styled.StrButtonLeft>
         )}
         {buttons && buttons?.length >= 1 && (
-          <Styled.StrButton isActivated={isButtonActivated} onClick={onClickButton}>
+          <Styled.StrButton $isActivated={isButtonActivated} onClick={onClickButton}>
             {buttons[0]}
           </Styled.StrButton>
         )}
@@ -90,9 +90,9 @@ const Styled = {
     height: 100%;
     width: 100%;
   `,
-  Footer: styled.footer<{ isButtons: boolean }>`
+  Footer: styled.footer<{ $isButtons: boolean }>`
     display: flex;
-    flex-direction: ${({ isButtons }) => (isButtons? 'row' : 'column')};
+    flex-direction: ${({ $isButtons }) => ($isButtons? 'row' : 'column')};
     justify-content: space-between;
     align-items: center;
     min-width: 32rem;
@@ -101,7 +101,7 @@ const Styled = {
     position: fixed;
     bottom: 0;
   `,
-  StrButton: styled.button<{ isActivated: boolean }>`
+  StrButton: styled.button<{ $isActivated: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,15 +110,15 @@ const Styled = {
     padding: 1.3rem;
     border: none;
     border-radius: 1.5rem;
-    background: ${({ isActivated }) => (isActivated? '#3182F6' : '#F2F4F6')};
+    background: ${({ $isActivated }) => ($isActivated? '#3182F6' : '#F2F4F6')};
 
     text-align: center;
-    color: ${({ isActivated }) => (isActivated? 'white' : 'black')};
+    color: ${({ $isActivated }) => ($isActivated? 'white' : 'black')};
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.052rem;
     cursor: pointer;
-    pointer-events: ${({ isActivated }) => (isActivated? 'auto' : 'none')};
+    pointer-events: ${({ $isActivated }) => ($isActivated? 'auto' : 'none')};
   `,
   StrButtonLeft: styled.button`
     width: 100%;

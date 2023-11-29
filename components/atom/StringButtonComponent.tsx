@@ -13,7 +13,7 @@ export default function StringButtonComponent(props: StringButtonProps) {
   return (
     <Styled.Button
       key={key}
-      isActivated={isActivated}
+      $isActivated={isActivated}
       onClick={handleClick}
     >
       {buttonName}
@@ -22,15 +22,15 @@ export default function StringButtonComponent(props: StringButtonProps) {
 }
 
 const Styled = {
-  Button: styled.button<{ isActivated: boolean }>`
+  Button: styled.button<{ $isActivated: boolean }>`
     width: 100%;
     padding: 1.5rem;
     border: none;
     border-radius: 1.5rem;
-    background-color: ${({ isActivated }) => (isActivated ? '#3182F6' : '#F2F4F6')};
+    background-color: ${({ $isActivated }) => ($isActivated ? '#3182F6' : '#F2F4F6')};
 
     text-align: center;
-    color: ${({ isActivated }) => (isActivated ? '#F2F4F6' : '#4E5867')};
+    color: ${({ $isActivated }) => ($isActivated ? '#F2F4F6' : '#4E5867')};
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.052rem;

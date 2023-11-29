@@ -28,6 +28,7 @@ export default function MeetingDetail() {
             startDate: detail?.startDate,
             endDate: detail?.endDate,
             place: detail?.place,
+            info: detail?.info
           }}
       />
       )}

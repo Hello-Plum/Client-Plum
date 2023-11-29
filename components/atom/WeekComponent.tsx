@@ -5,8 +5,8 @@ import { timeList, weekList } from '../../data/available/checkAvailableTimeTable
 export default function WeekComponent() {
   return (
     <Styled.WeekContainer>
-        {weekList.map((day) => {
-          return <Styled.Day>{day}</Styled.Day>
+        {weekList.map((day, i) => {
+          return <Styled.Day key={i}>{day}</Styled.Day>
         })}
       </Styled.WeekContainer>
   )

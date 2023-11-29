@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
-import TitleComponent from '../../../../components/modules/TitleComponent'
+import TitleComponent from '../../../modules/TitleComponent'
 import TimeTable from './TimeTable'
-import WeekComponent from '../../../../components/atom/WeekComponent'
-import TimeComponent from '../../../../components/atom/TimeComponent'
+import WeekComponent from '../../../atom/WeekComponent'
+import TimeComponent from '../../../atom/TimeComponent'
 import { useRouter } from 'next/router'
 import { useEntireTimeTable } from '../../../../hooks/owner/useEntireTimeTable'
 

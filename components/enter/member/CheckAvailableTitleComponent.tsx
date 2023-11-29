@@ -1,4 +1,4 @@
-import TitleComponent from "../../../components/modules/TitleComponent";
+import TitleComponent from "../../modules/TitleComponent";
 
 interface CheckAvailableTimeSteps {
   [key: string]: {

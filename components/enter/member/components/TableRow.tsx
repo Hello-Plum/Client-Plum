@@ -28,7 +28,7 @@ export default function TableRow({ contents, meetingDetail, availableTimeInfo }:
             id={`${content}`}
             key={content}
             onClick={handlePriority}
-            isAvailabled={mergeRowFirstList.includes(content)}
+            $isAvailabled={mergeRowFirstList.includes(content)}
             rowSpan={mergeRowFirstList.includes(content) ? availableGroupList.filter((arr: any) => arr[0] === content)[0].length : 1}
           >
           {(priorityList.includes(content)) ? savePriority(content) : ''}
@@ -41,7 +41,7 @@ export default function TableRow({ contents, meetingDetail, availableTimeInfo }:
 }
 const Styled = {
   Tr: styled.tr``,
-  Td: styled.td<{ isAvailabled : boolean }>`
+  Td: styled.td<{ $isAvailabled : boolean }>`
     width: 4.5rem;
     height: 1.4rem;
     text-align: center;
@@ -53,8 +53,8 @@ const Styled = {
     color: white;
     font-size: 1.7rem;
     font-weight: 700;
-    background-color: ${({ isAvailabled }) => (isAvailabled ? 'rgba(49, 130, 246, 1)' : 'white')};
+    background-color: ${({ $isAvailabled }) => ($isAvailabled ? 'rgba(49, 130, 246, 1)' : 'white')};
     cursor: pointer;
-    pointer-events: ${({ isAvailabled }) => (isAvailabled ? 'auto' : 'none')}; d
+    pointer-events: ${({ $isAvailabled }) => ($isAvailabled ? 'auto' : 'none')}; d
   `,
 }

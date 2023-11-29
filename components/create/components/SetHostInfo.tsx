@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StepProps } from '../../../types/create/createMeetingInterface'
-import InputComponent from '../../../components/atom/InputComponenet'
+import InputComponent from '../../atom/InputComponenet'
 
 export default function SetHostInfo({ meetingInfo, setMeetingInfo}: StepProps) {
   return (

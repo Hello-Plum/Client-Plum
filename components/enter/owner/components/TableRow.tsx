@@ -19,7 +19,7 @@ export default function TableRow({ elements }: TableRowBodyProps) {
           <Styled.Td
             id={`${element}`}
             key={element}
-            isAvailabled={contents[element].length ? contents[element].length / members.length : 0}
+            $isAvailabled={contents[element].length ? contents[element].length / members.length : 0}
           >
           {}
           </Styled.Td>
@@ -31,7 +31,7 @@ export default function TableRow({ elements }: TableRowBodyProps) {
 }
 const Styled = {
   Tr: styled.tr``,
-  Td: styled.td<{ isAvailabled: number }>`
+  Td: styled.td<{ $isAvailabled: number }>`
     width: 4.5rem;
     height: 1.4rem;
     text-align: center;
@@ -40,7 +40,7 @@ const Styled = {
     vertical-align: top; /* 위 */
     vertical-align: bottom; /* 아래 */
     vertical-align: middle;
-    background-color: ${({ isAvailabled }) => (isAvailabled ? `rgba(49, 130, 246, ${isAvailabled})` : 'white')};
+    background-color: ${({ $isAvailabled }) => ($isAvailabled ? `rgba(49, 130, 246, ${$isAvailabled})` : 'white')};
     cursor: pointer;
   `,
 }

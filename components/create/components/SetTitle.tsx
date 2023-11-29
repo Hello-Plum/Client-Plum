@@ -1,6 +1,6 @@
 import React from 'react'
 import { StepProps } from '../../../types/create/createMeetingInterface'
-import InputComponent from '../../../components/atom/InputComponenet'
+import InputComponent from '../../atom/InputComponenet'
 
 export default function SetTitle({ meetingInfo, setMeetingInfo }: StepProps) {
   return (

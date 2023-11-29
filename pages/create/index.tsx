@@ -1,9 +1,9 @@
 import React from 'react'
 import Layout from '../../components/common/Layout'
-import CreateMeetingTitleComponent from './CreateMeetingTitleComponenet'
+import CreateMeetingTitleComponent from '../../components/create/CreateMeetingTitleComponenet'
 import { createMeetingSteps } from '../../data/create/createMeetingData'
 import { useCreateMeeting } from '../../hooks/create/useCreateMeeting'
-import CreateMeetingBodyComponent from './CreateMeetingBodyComponent'
+import CreateMeetingBodyComponent from '../../components/create/CreateMeetingBodyComponent'
 
 export default function Create() {
   const { step, isActivated, meetingInfo, setMeetingInfoForm, handleBackBtnClick, handleBtnClick } = useCreateMeeting()

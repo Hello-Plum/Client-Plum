@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import OwnerComponent from './components/OwnerComponent'
+import OwnerComponent from '../../../components/enter/owner/components/OwnerComponent'
 import { useConfirmMeeting } from '../../../hooks/owner/useConfirmAvailableTime'
 import TabLayout from '../../../components/common/TabLayout'
 

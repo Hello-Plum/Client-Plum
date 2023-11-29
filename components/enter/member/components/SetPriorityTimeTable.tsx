@@ -2,8 +2,8 @@ import React from 'react'
 import styled from "styled-components"
 import TimeTable from './TimeTable'
 import { StepProps } from '../../../../types/enter/checkMeetingInterface'
-import WeekComponent from '../../../../components/atom/WeekComponent'
-import TimeComponent from '../../../../components/atom/TimeComponent'
+import WeekComponent from '../../../atom/WeekComponent'
+import TimeComponent from '../../../atom/TimeComponent'
 
 export default function SetPriorityTimeTable({ meetingDetail, availableTimeInfo, setAvailableTimeInfo }: StepProps) {
   return (

@@ -5,8 +5,8 @@ import { timeList, weekList } from '../../data/available/checkAvailableTimeTable
 export default function TimeComponent() {
   return (
     <Styled.TimeContainer>
-      {timeList.map((time) => {
-        return <Styled.Time>{time}</Styled.Time>
+      {timeList.map((time, i) => {
+        return <Styled.Time key={time}>{i}</Styled.Time>
       })}
     </Styled.TimeContainer>
   )

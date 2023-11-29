@@ -1,12 +1,12 @@
 import { useRecoilState, useSetRecoilState } from "recoil"
-import { checkMemberAvailableBtnActivatedState, hostSelectedAvailableWeekState, isHostSelectedPeriodState, memberSelectedTimeBlockList } from "../../states/atom"
+import { checkMemberAvailableBtnActivatedState, hostSelectedAvailableWeekState, memberSelectedTimeBlockList } from "../../states/atom"
 
 export const useCheckAvailableTimeTable = () => {
   const setIsActivated = useSetRecoilState(checkMemberAvailableBtnActivatedState)
   // 호스트가 선택한 요일의 인덱스 리스트
   const [selectedWeek, setSelectedWeek] = useRecoilState(hostSelectedAvailableWeekState)
   // 호스트가 하루 지정했는지, 기간 지정했는지
-  const [isPeriod, setIsPeriod] = useRecoilState(isHostSelectedPeriodState)
+  //const [isPeriod, setIsPeriod] = useRecoilState(isHostSelectedPeriodState)
   // 멤버가 선택한 시간 블록 저장 리스트
   const setSelectedTimeBlock = useSetRecoilState(memberSelectedTimeBlockList)
   
@@ -35,5 +35,5 @@ export const useCheckAvailableTimeTable = () => {
     })
   }
 
-  return { selectedWeek, setSelectedWeek, isPeriod, setIsPeriod, handleTimeTableSelect, disabledDayTable, disabledWeekTable }
+  return { selectedWeek, setSelectedWeek, handleTimeTableSelect, disabledDayTable, disabledWeekTable }
 }

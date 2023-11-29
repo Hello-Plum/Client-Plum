@@ -49,15 +49,17 @@ export const availableTimeInfoState = atom<AvailableTimeInfo>({
   }
 })
 
-export const hostSelectedAvailableWeekState = atom<Array<number>>({
+export const hostSelectedAvailableWeekState = atom<any>({
   key: 'hostSelectedAvailableWeekState',
   default: []
 })
 
+/*
 export const isHostSelectedPeriodState = atom<boolean>({
   key: 'isHostSelectedPeriodState',
   default: false
 })
+*/
 
 export const memberSelectedTimeBlockList = atom<Array<number>>({
   key: 'memberSelectedTimeBlockList',

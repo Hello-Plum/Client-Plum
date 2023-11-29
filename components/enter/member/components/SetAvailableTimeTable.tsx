@@ -3,16 +3,18 @@ import { StepProps } from '../../../../types/enter/checkMeetingInterface'
 import Selecto from 'react-selecto'
 import { styled } from 'styled-components'
 import { useCheckAvailableTimeTable } from '../../../../hooks/member/useCheckAvailableTimeTable'
-import WeekComponent from '../../../../components/atom/WeekComponent'
-import TimeComponent from '../../../../components/atom/TimeComponent'
+import WeekComponent from '../../../atom/WeekComponent'
+import TimeComponent from '../../../atom/TimeComponent'
 
 export default function SetAvailableTime({ meetingDetail, availableTimeInfo, setAvailableTimeInfo }: StepProps) {
-  const { selectedWeek, setSelectedWeek, isPeriod, setIsPeriod, handleTimeTableSelect, disabledDayTable, disabledWeekTable } = useCheckAvailableTimeTable()
+  const { selectedWeek, setSelectedWeek, handleTimeTableSelect, disabledDayTable, disabledWeekTable } = useCheckAvailableTimeTable()
 
+  /*
   useEffect(() => {
     setSelectedWeek(meetingDetail?.selectedWeek)
     setIsPeriod(meetingDetail?.period)
   },[])
+  */
 
   const slots = []
   for (let i = 0; i < 238; ++i) {
@@ -50,7 +52,7 @@ export default function SetAvailableTime({ meetingDetail, availableTimeInfo, set
                     } else if (Math.floor((i / 7) % 2) === 1) {
                       sep = ' solid'
                     }
-                    sep += isPeriod ? disabledWeekTable(i, selectedWeek) : disabledDayTable(i, selectedWeek)
+                    sep += meetingDetail?.period ? disabledWeekTable(i, meetingDetail?.selectedWeek) : disabledDayTable(i, meetingDetail?.selectedWeek)
                     return <div id={String(i)} className={'slot' + sep} key={i}></div>
                   })}
                 </div>

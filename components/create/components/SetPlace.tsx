@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { placeType } from '../../../data/create/createMeetingData'
 import { StepProps } from '../../../types/create/createMeetingInterface'
-import StringButtonComponent from '../../../components/atom/StringButtonComponent'
-import InputComponent from '../../../components/atom/InputComponenet'
+import StringButtonComponent from '../../atom/StringButtonComponent'
+import InputComponent from '../../atom/InputComponenet'
 
 export default function SetPlace({ meetingInfo, setMeetingInfo }: StepProps) {
   return (
@@ -48,18 +48,5 @@ const Styled = {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-  `,
-  Button: styled.button<{ isClicked: boolean }>`
-    width: 100%;
-    padding: 1.5rem;
-    border-radius: 0.6rem;
-    background: ${({ isClicked }) => (isClicked ? '#3182F6' : '#F2F4F6')};
-
-    text-align: center;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.052rem;
-    cursor: pointer;
   `,
 }
