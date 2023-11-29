@@ -104,7 +104,7 @@ const Styled = {
   StrButtonLeft: styled.button`
     width: 100%;
     padding: 1rem;
-    border: none;
+    border: 2px solid #F2F4F6;
     border-radius: 1.5rem;
     background: #F2F4F6;
     
