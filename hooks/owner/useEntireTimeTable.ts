@@ -13,7 +13,6 @@ export const useEntireTimeTable = (meetingId: string | string[] | undefined) => 
   const checkEntireTimeTable = async () => {
     try {
       const { data } = await getEntireTimeTable(meetingId)
-      console.log('checkEntireTimeTable data', data)
       
       // 데이터 전처리
       const memberList = [...new Set(data.map((availableElement: CheckEntireTimeTableResponse) => { return availableElement.name }))]
@@ -25,7 +24,6 @@ export const useEntireTimeTable = (meetingId: string | string[] | undefined) => 
         }
       })
       setContents(contentList)
-      console.log('checkEntireTimeTable contents', contentList)
     } catch (error) {
       console.log('[ERROR] checkEntireTimeTable error', error)
     }
