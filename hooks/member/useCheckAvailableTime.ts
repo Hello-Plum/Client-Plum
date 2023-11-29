@@ -64,6 +64,9 @@ export const useCheckAvailableTime = () => {
       case 2:
         setAvailableTimeInfoForm({ priorities: priorityList })
         await checkMemberAvailable()
+        setPage(page + 1)
+        break
+      case 3:
         break
     }
   }
@@ -84,8 +87,7 @@ export const useCheckAvailableTime = () => {
       }
 
       const { data } = await postCheckMemberAvailable(meetingId, requestData)
-      console.log('data', data)
-      router.push(`/`)
+      
     } catch (error) {
       console.log('[ERROR] createMeeting error', error)
     }

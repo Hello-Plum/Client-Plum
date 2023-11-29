@@ -5,6 +5,7 @@ import SetName from './components/SetName'
 import SetAvailableTimeTable from './components/SetAvailableTimeTable'
 import SetPriorityTimeTable from './components/SetPriorityTimeTable'
 import { Detail } from '../../../types/cardInfo/showInfoInterface'
+import SetEnd from './components/SetEnd'
 
 interface CheckAvailableBodyProps {
   step: string
@@ -17,7 +18,7 @@ const BodyTypes: { [key: string]: React.JSXElementConstructor<any> } = {
   'name': SetName,
   'availableTimeTable': SetAvailableTimeTable,
   'priority': SetPriorityTimeTable,
-  //'end'
+  'end': SetEnd,
 }
 
 export default function CheckAvailableBodyComponent({ step, meetingDetail, availableTimeInfo, setAvailableTimeInfo }: CheckAvailableBodyProps) {
